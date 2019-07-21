@@ -1,0 +1,56 @@
+.logo-container {
+  display: inline-block;
+}
+
+.logo-unit {
+  width: 2vh;
+  height: 2vh;
+  display: inline-block;
+  background: #54e0ff;
+  box-sizing: border-box;
+  border-radius: 1vh;
+  transition: 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+#logo-unit-1 {
+ margin-right: 2vh;
+ height: 6vh;
+ width: 12vh;
+ border-top-right-radius: 0.45vh;
+ border-bottom-left-radius: 0.45vh;
+}
+
+#logo-unit-2 {
+  /* for no effection */
+  table-layout: unset;
+}
+
+#logo-sub-unit-2-1 {
+  margin-bottom: 1.15vh;
+  background: #27aac7;
+}
+
+#logo-sub-unit-2-2 {
+  margin-top: 0;
+}
+
+#logo-unit-3 {
+  height: 6vh;
+  margin-left: 2vh;
+  width: 2vh;
+  background: #27aac7;
+  border-top-left-radius: 0.45vh;
+  border-bottom-right-radius: 0.45vh;
+}
+
+/*
+  // blue color scheme for logo
+  light: #00d0ff
+  dark: #00758f
+
+  // lighter
+  L: 54e0ff
+  D: 27aac7
+*/

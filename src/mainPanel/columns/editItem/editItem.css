@@ -1,0 +1,106 @@
+#edit-item-body {
+  position: relative;
+  font-size: 2.3vh;
+}
+
+.edit-item-row-g {
+  margin-top: 1vh;
+  margin-left: 2.16vh;
+}
+
+.edit-input {
+  border: 0.14vh solid #ccc;
+  padding: 0.71vh 1.43vh;
+  font-size: 1.9vh;
+}
+
+.edit-label {
+  margin-left: 1.87vh;
+}
+
+.edit-input-textarea {
+  width: 60%;
+  height: 10.07vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+#edit-item-body input[type="checkbox"] {
+  width: 2.3vh;
+  height: 2.3vh;
+}
+
+#edit-end {
+  float: right;
+}
+
+#edit-end-btn {
+  padding: 1.43vh 2.73vh;
+  background: rgb(0, 133, 186);
+  background-image: -webkit-linear-gradient(40deg, rgba(255, 255, 255, .2) 33%,
+											  transparent 33%,
+											  transparent 66%,
+											  rgba(255, 255, 255, .2) 66%,
+											  transparent)
+}
+
+#edit-end-btn:active {
+  background: rgb(0, 96, 134);
+  background-image: -webkit-linear-gradient(40deg, rgba(255, 255, 255, .2) 33%,
+											  transparent 33%,
+											  transparent 66%,
+											  rgba(255, 255, 255, .2) 66%,
+											  transparent)
+}
+
+#edit-reset {
+  float: right;
+}
+
+#edit-reset-btn {
+  padding: 1.43vh 2.73vh;
+  background: #6c9;
+  background-image: -webkit-linear-gradient(40deg, rgba(255, 255, 255, .2) 33%,
+											  transparent 33%,
+											  transparent 66%,
+											  rgba(255, 255, 255, .2) 66%,
+											  transparent)
+}
+
+#edit-reset-btn:active {
+  background: rgb(44, 133, 88);
+  background-image: -webkit-linear-gradient(40deg, rgba(255, 255, 255, .2) 33%,
+											  transparent 33%,
+											  transparent 66%,
+											  rgba(255, 255, 255, .2) 66%,
+											  transparent)
+}
+
+#edit-as-code {
+  background: #ddd;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 94%;
+}
+
+#edit-as-code-header {
+  color: #886e69;
+  cursor: pointer;
+  padding: 0.71vh 0;
+  border-top: 0.43vh solid #886e69;
+  font-size: 2.7vh;
+  border-radius: 0.72vh;
+}
+
+#edit-as-code-header:hover {
+  background: #ccc;
+  border-top: none;
+  border-bottom: 0.43vh solid #886e69;
+}
+
+#edit-as-code-textarea {
+  display: none;
+  width: 28.77vh;
+}

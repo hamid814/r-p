@@ -1,0 +1,35 @@
+#main-panel {
+  display: grid;
+  grid-template-columns: 7fr 8fr 8fr;
+  grid-gap: 0.4vh;
+  padding: 0.57vh 0.57vh 0;
+  background: #f5fcfd;
+  margin-top: 0.2vh;
+}
+
+.column {
+  background: #ecf9fc;
+  border-radius: 1vh;
+  height: 83vh;
+  font-size: 2.3vh;
+}
+
+.column-header {
+  padding: 0.57vh 4.31vh;
+  background: #eee;
+  z-index: 0;
+  border-radius: 1vh;
+  font-size: 3.4vh;
+  height: 5.7vh;
+  margin-right: 0.43vh;
+}
+
+.column-body {
+  padding: 1.43vh 2.86vh;
+  margin-right: 0.43vh;
+  overflow-y: auto;
+  height: 77vh;
+  border-radius: 1vh;
+}
+
+

@@ -1,0 +1,144 @@
+#clear-form-btn {
+  border-radius: 0.5vh;
+  padding: 0.72vh 3vh;
+  background: #d55347;
+  cursor: pointer;
+  color: #f9f9ff;
+  margin: 0;
+  display: inline-block;
+  float: right;
+  margin-right: -2vh;
+  height: 4.3vh;
+  background-image: -webkit-linear-gradient(40deg, rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 75%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  rgba(255, 255, 255, .2) 50%, 
+											  transparent)
+}
+
+#clear-form-btn:active {
+  background: #c72230;
+  background-image: -webkit-linear-gradient(40deg, rgba(255, 255, 255, .2) 25%,
+											  transparent 25%,
+											  transparent 75%,
+											  transparent 50%,
+											  rgba(255, 255, 255, .2) 75%,
+											  rgba(255, 255, 255, .2) 50%, 
+											  transparent)
+}
+
+.item-row {
+  padding-bottom: 0.72vh;
+  border-radius: 0.72vh;
+}
+
+.item-row:hover {
+  background: #c3d1d4;
+}
+
+.item-row-header {
+  opacity: 0;
+  padding: 0.43vh 1.43vh 0.43vh 2.87vh;
+  border-top-right-radius: 0.72vh;
+  border-top-left-radius: 0.72vh;
+  cursor: grab;
+  z-index: 0;
+}
+
+.item-row:hover .item-row-header {
+  background: #dfdfdd;
+  opacity: 1;
+}
+
+.item-row-header-name {
+  display: inline-block;
+  font-weight: 200;
+  color: #886e69;
+}
+
+.item-row-header-btn-panel {
+  display: inline-block;
+  float: right;
+}
+
+.item-row-header-btn {
+  display: inline-block;
+  margin: 0 0.72vh;
+  background: #83aebd;
+  width: 2.87vh;
+  height: 2.87vh;
+  border-radius: 0.57vh;
+  text-align: center;
+  cursor: pointer;
+  padding-bottom: 2.87vh;
+  position: relative;
+  z-index: 2;
+}
+
+.item-row-header-btn:hover {
+  background: #66cc99;
+}
+
+.item-row-header-btn-desc {
+  background: #1d573a;
+  min-width: 10.07vh;
+  border-radius: 0.72vh;
+  opacity: 0.7;
+  position: absolute;
+  top: -3.6vh;
+  left: -3.6vh;
+  color: #eee;
+  display: none;
+  z-index: 2;
+}
+
+.item-row-header-btn:hover .item-row-header-btn-desc {
+  display: inline-block;
+  animation: fadeInPopUp 0.2s ease-in;
+}
+
+.item-row-body {
+  padding-left: 2.16vh;
+  padding-top: 0.43vh;
+  cursor: pointer;
+  margin-top: 0.43vh;
+}
+
+.item-row-body * {
+  display: block;
+  cursor: pointer;
+  padding-bottom: 0.72vh;
+}
+
+.required-star {
+  color: rgb(158, 11, 15);
+  display: inline-block;
+  height: 1.87vh;
+}
+
+.item-row-input {
+  border: 0.14vh solid #ccc;
+  padding: 0.72vh 1.3vh;
+  cursor: auto;
+  font-size: 1.9vh;
+}
+
+.item-row-active .item-row-body {
+  border-left: 0.73vh solid #add;
+  border-right: 0.73vh solid #add;
+  margin-left: 1.43vh;
+  margin-right: 1.43vh;
+}
+
+@keyframes fadeInPopUp {
+  0% {
+    opacity: 0;
+    top: -2.16vh;
+  }
+  100% {
+    opacity: 0.7;
+    top: -3.6vh;
+  }
+}

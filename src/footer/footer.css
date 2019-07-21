@@ -1,0 +1,93 @@
+#footer-wraper {
+  background: #886e69;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-perspective: 1000;
+  font-weight: 100;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 7vh;
+}
+
+.footer-expand {
+  padding: 2.15vh 7.2vh 1.43vh;
+  text-align: center;
+}
+
+.footer-shrink {
+  padding: 5px 2.15vh;
+  animation: footerShrinkAnimation 0.5s ease-in-out;
+}
+
+.footer-shrink .footer-icon {
+  transform-origin: right;
+  transform: translateZ(-57.5vh);
+}
+
+.footer-shrink .footer-icon:first-child {
+  text-align: left;
+  margin-left: -24.46vh;
+}
+
+.footer-shrink .footer-icon:last-child {
+  text-align: right;
+  margin-right: -24.46vh;
+}
+
+.footer-icon {
+  border-right: 0.14vh #ccc solid;
+  padding: 0 2.87vh;
+  padding-top: 0.57vh;
+  vertical-align: middle;
+}
+
+.footer-icon:last-child {
+  border-right: none;
+}
+
+#hamid-footer {
+  color: #f9f9ff;
+}
+
+#hamid-logo-svg {
+  transform: translateZ(143.88vh);
+  margin-right: 5.75vh;
+}
+
+#hamid-text {
+  margin-bottom: 143.88vh;
+}
+
+#react-footer {
+  
+  color: #60dbfb;
+  font-size: 3.74vh;
+}
+
+#react-logo {
+  border-radius: 7.19vh;
+  width: 5.75vh;
+  animation: reactanim 3.33s cubic-bezier(1,1,1,1) infinite;
+}
+
+@keyframes reactanim {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(60deg);
+  }
+}
+
+@keyframes footerShrinkAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
