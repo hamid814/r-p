@@ -27,7 +27,6 @@ export class EditingItemPresenter extends Component {
       required,
       readOnly
     });
-    // console.log();
   }
   onChangeHandler = (event) => {
     const name = event.target.name;
