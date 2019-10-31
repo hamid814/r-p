@@ -45,72 +45,72 @@ export class EditingItemPresenter extends Component {
     return (
       <React.Fragment>
         {id}
-        <div className="edit-item-row-g">
-            <label className="edit-label"><code>label:</code></label>
+        <div className='edit-item-row-g'>
+            <label className='edit-label'><code>label:</code></label>
             <br />
             <input
               value={ label }
-              name="label"
-              className="edit-input"
+              name='label'
+              className='edit-input'
               onChange={this.onChangeHandler} />
           </div>
-          <div className="edit-item-row-g">
-            <label className="edit-label"><code>value:</code></label>
+          <div className='edit-item-row-g'>
+            <label className='edit-label'><code>value:</code></label>
             <br />
             <input
               value={ value }
-              name="value"
-              className="edit-input"
+              name='value'
+              className='edit-input'
               onChange={this.onChangeHandler} />
           </div>
-          <div className="edit-item-row-g">
-            <label className="edit-label"><code>placeholder:</code></label>
+          <div className='edit-item-row-g'>
+            <label className='edit-label'><code>placeholder:</code></label>
             <br />
             <input
               value={ placeHolder }
-              name="placeHolder"
-              className="edit-input"
+              name='placeHolder'
+              className='edit-input'
               onChange={this.onChangeHandler} />
           </div>
-          <div className="edit-item-row-g">
-            <label className="edit-label"><code>id:</code></label>
+          <div className='edit-item-row-g'>
+            <label className='edit-label'><code>id:</code></label>
             <br />
             <input
-              type="text"
+              type='text'
               value={ idname }
-              name="idname"
-              className="edit-input"
+              name='idname'
+              className='edit-input'
               onChange={this.onChangeHandler} />
           </div>
-          <div className="edit-item-row-g">
-            <label className="edit-label"><code>class:</code></label>
+          <div className='edit-item-row-g'>
+            <label className='edit-label'><code>class:</code></label>
             <br />
             <input
               value={ classname }
-              name="classname"
-              className="edit-input"
+              name='classname'
+              className='edit-input'
               onChange={this.onChangeHandler} />
           </div>
-          <div className="edit-item-row-g">
-            <label className="edit-label"><code>description:</code></label>
+          <div className='edit-item-row-g'>
+            <label className='edit-label'><code>description:</code></label>
             <br />
             <textarea
               value={ description }
-              name="description"
-              className="edit-input edit-input-textarea"
+              name='description'
+              className='edit-input edit-input-textarea'
               onChange={this.onChangeHandler} />
           </div>
-          <div className="edit-item-row-g">
+          <div className='edit-item-row-g'>
             <input
-              type="checkbox"
-              name="required"
+              type='checkbox'
+              name='required'
               checked={ required }
               onChange={this.onCheckHandler} /> Required
           </div>
-          <div className="edit-item-row-g">
+          <div className='edit-item-row-g'>
             <input
-              type="checkbox"
-              name="readOnly"
+              type='checkbox'
+              name='readOnly'
               checked={ readOnly }
               onChange={this.onCheckHandler} /> Readonly
           </div>
