@@ -52,11 +52,11 @@ export class Notes extends Component {
   }
   render() {
     return (
-      <React.Fragment>
+      <>
         {this.state.notes.map((note, index) => {
           return <NotePresenter note={note} key={index} />
         })}
-      </React.Fragment>
+      </>
     )
   }
 }
