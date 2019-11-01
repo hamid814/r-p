@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import './formCode.css';
 
 const FormCode = ({ info: { action, method, title, description, submitText }, form }) => {
-  const [copyText, setCopyText] = useState('copy')
+  const [copyText, setCopyText] = useState('')
   const codeContainer = useRef(null);
   const finalCode = useRef(null);
 

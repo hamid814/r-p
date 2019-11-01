@@ -37,6 +37,9 @@ class App extends Component {
           <Footer 
             isUp={this.state.isUp} />
         </div>
+        <div id='contact-me'>
+          contact me
+        </div>
       </>
     )
   }
