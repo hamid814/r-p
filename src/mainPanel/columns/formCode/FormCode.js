@@ -8,7 +8,7 @@ class FormCode extends Component {
           Your Code
         </h2>
         <div id='final-code' className='column-body'>
-          {console.log(this.props.form)}
+          
         </div>
       </>
     )

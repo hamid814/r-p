@@ -16,6 +16,7 @@ export class MainPanel extends Component {
       {
         id: uuid.v4(),
         name: 'name of btn', // is title of that btn
+        fieldName: 'name', // for post and get methods
         type: 'text',
         label: 'untitled',
         idname: 'id',
@@ -63,9 +64,15 @@ export class MainPanel extends Component {
         placeHolder: ''
       }
     ],
+    formInfo: {
+      title: 'form title',
+      sumbitText: 'sumbit',
+      description: 'you can enter a small description here',
+      action: '',
+      method: ''
+    },
     fieldTypes : {
       text : {
-        id: '',
         name: 'text input',
         type: 'text',
         label: 'untitled',
@@ -80,7 +87,6 @@ export class MainPanel extends Component {
         placeHolder: ''
       },
       password: {
-        // id: uuid.v4(),
         name: 'name of btn',
         type: 'text',
         label: 'untitled',
@@ -95,7 +101,6 @@ export class MainPanel extends Component {
         placeHolder: ''
       },
       button: {
-        // id: uuid.v4(),
         name: 'button',
         type: 'button',
         label: 'untitled',
@@ -110,7 +115,6 @@ export class MainPanel extends Component {
         placeHolder: ''
       },
       hidden: {
-        // id: uuid.v4(),
         name: 'hidden field',
         type: 'hidden',
         label: 'untitled',
@@ -125,7 +129,6 @@ export class MainPanel extends Component {
         placeHolder: ''
       },
       checkbox: {
-        // id: uuid.v4(),
         name: 'checkbox',
         type: 'checkbox',
         label: 'untitled',
@@ -175,7 +178,6 @@ export class MainPanel extends Component {
         placeHolder: ''
       },
       date: {
-        // id: uuid.v4(),
         name: 'date field',
         type: 'date',
         label: 'untitled',
@@ -190,7 +192,6 @@ export class MainPanel extends Component {
         placeHolder: ''
       },
       number: {
-        // id: uuid.v4(),
         name: 'number field',
         type: 'number',
         label: 'untitled',
@@ -206,7 +207,7 @@ export class MainPanel extends Component {
       }
     },
     activeId: '',
-    formStatus: 'code'
+    formStatus: 'setting'
   }
   setFormStatus = (formStatus) => {
     this.setState({
@@ -304,6 +305,15 @@ export class MainPanel extends Component {
   resetHandler = (id, item) => {
     // i think it doesnt need the item, every thing is always to this.state saved, so... just the id...
   }
+  formInfoSetter = (info, value) => {
+    this.setState({
+      formInfo: {
+        ...this.state.formInfo,
+        [info]: value
+      }
+    });
+    console.log(info, value)
+  }
   // for shrink and expand the footer
   onClickHandler = () => {
     this.props.onClick();
@@ -347,7 +357,8 @@ export class MainPanel extends Component {
           </div>
           <div className={`column ${this.state.formStatus !== 'setting' && 'd-n'}`}>
             <FormSetting
-              info={this.state.formInfo} />
+              info={this.state.formInfo}
+              set={this.formInfoSetter} />
           </div>
           <div className='column'>
             <FormPanel

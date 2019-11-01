@@ -43,7 +43,7 @@ export class EditingItemPresenter extends Component {
   render() {
     const { id , value , idname , placeHolder , label , classname , description , required , readOnly } = this.state;
     return (
-      <React.Fragment>
+      <>
         {process.env.NODE_ENV === 'development' && id}
         <div className='edit-item-row-g'>
             <label className='edit-label'><code>label:</code></label>
@@ -114,7 +114,7 @@ export class EditingItemPresenter extends Component {
               checked={ readOnly }
               onChange={this.onCheckHandler} /> Readonly
           </div>
-      </React.Fragment>
+      </>
     )
   }
 }
