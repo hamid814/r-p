@@ -207,7 +207,7 @@ export class MainPanel extends Component {
       }
     },
     activeId: '',
-    formStatus: 'preview'
+    formStatus: 'code'
   }
   setFormStatus = (formStatus) => {
     this.setState({
@@ -358,6 +358,7 @@ export class MainPanel extends Component {
           </div>
           <div className={`column ${this.state.formStatus !== 'code' && 'd-n'}`}>
             <FormCode
+              info={this.state.formInfo}
               form={this.state.formItems} />
           </div>
           <div className='column'>

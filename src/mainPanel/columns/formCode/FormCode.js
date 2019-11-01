@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class FormCode extends Component {
-  render() {
-    return (
-      <>
-        <h2 className='column-header'>
-          Your Code
-        </h2>
-        <div id='final-code' className='column-body'>
-          
-        </div>
-      </>
-    )
-  }
+const FormCode = () => {
+  return (
+    <>
+      <h2 className='column-header'>
+        Your Code
+      </h2>
+      <div id='final-code' className='column-body'>
+        <textarea>
+            
+        </textarea>
+      </div>
+    </>
+  )
 }
 
 export default FormCode

@@ -23,14 +23,6 @@ export class FormSetting extends Component {
               <input type='text' name='title' value={title} onChange={this.changeHandler}/>
             </div>
             <div className='setting-item'>
-              <label>Sumbit text</label>
-              <input type='text' name='submitText' value={submitText} onChange={this.changeHandler}/>
-            </div>
-            <div className='setting-item'>
-              <label>Description</label>
-              <input type='text' name='description' value={description} onChange={this.changeHandler}/>
-            </div>
-            <div className='setting-item'>
               <label>Method</label>
               <select name='method' value={method} onChange={this.changeHandler}>
                 <option value='none'>none</option>
@@ -41,6 +33,14 @@ export class FormSetting extends Component {
             <div className='setting-item'>
               <label>Action</label>
               <input type='text' name='action' value={action} onChange={this.changeHandler}/>
+            </div>
+            <div className='setting-item'>
+              <label>Description</label>
+              <input type='text' name='description' value={description} onChange={this.changeHandler}/>
+            </div>
+            <div className='setting-item'>
+              <label>Sumbit text</label>
+              <input type='text' name='submitText' value={submitText} onChange={this.changeHandler}/>
             </div>
           </div>
         </div>
