@@ -41,6 +41,7 @@ export class MainPanel extends Component {
         description: '',
         classname: 'hey',
         value: '',
+        title: 'tttttt',
         placeHolder: 'say sth'
       },
       {
@@ -201,7 +202,8 @@ export class MainPanel extends Component {
         placeHolder: ''
       }
     },
-    activeId: ''
+    activeId: '',
+    formStatus: 'edit'
   }
   onAdd = (name) => {
     const newItem = {
@@ -323,22 +325,22 @@ export class MainPanel extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <div id="main-panel" onClick={this.onClickHandler}>
-          <div className="column">
+      <>
+        <div id='main-panel' onClick={this.onClickHandler}>
+          <div className='column'>
             <AddItem
               onClick={this.onAdd} />
             <FormPanel
               onClick={this.formPanelClicked} />
           </div>
-          <div className="column">
+          <div className='column'>
             <ItemsShowcase
               items={this.state.formItems}
               activeIdNumber={this.state.activeId}
               onClick={this.startEdit}
               onClear={this.onClear} />
             </div>
-          <div className="column">
+          <div className='column'>
             <EditItem
               items={this.state.formItems}
               id={this.state.activeId}
@@ -346,11 +348,11 @@ export class MainPanel extends Component {
               endEdit={this.endEdit}
               onReset={this.resetHandler} />
           </div>
-          {/* <div className="column">
+          {/* <div className='column'>
             <FormPanel />
           </div> */}
         </div>
-      </React.Fragment>
+      </>
     )
   }
 }

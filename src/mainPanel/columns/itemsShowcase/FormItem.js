@@ -32,49 +32,50 @@ export class FormItem extends Component {
     this.props.onClick(id, action, item);
   }
   render() {
-    const { name , type , label , placeHolder , value , description , required } = this.props.item;
+    const { name , type , label , placeHolder , value , description , required, title } = this.props.item;
     return (
       <div className={this.props.item.id === this.props.activeIdNumber ? 'item-row item-row-active' : 'item-row'}>
-        <div className="item-row-header">
-          <div className="item-row-header-name">
+        <div className='item-row-header'>
+          <div className='item-row-header-name'>
             <h4>::: {name}</h4>
           </div>
-          <div className="item-row-header-btn-panel">
-            <div className="item-row-header-btn" name="edit" onClick={this.resetClickHandler}>
+          <div className='item-row-header-btn-panel'>
+            <div className='item-row-header-btn' name='edit' onClick={this.resetClickHandler}>
               r
-              <div className="item-row-header-btn-desc">
+              <div className='item-row-header-btn-desc'>
                 Reset
               </div>
             </div>
-            <div className="item-row-header-btn" name="edit" onClick={this.editClikHandler}>
+            <div className='item-row-header-btn' name='edit' onClick={this.editClikHandler}>
               e
-              <div className="item-row-header-btn-desc">
+              <div className='item-row-header-btn-desc'>
                 Edit
               </div>
             </div>
-            <div className="item-row-header-btn" name="edit" onClick={this.cloneClickHandler}>
+            <div className='item-row-header-btn' name='edit' onClick={this.cloneClickHandler}>
               c
-              <div className="item-row-header-btn-desc">
+              <div className='item-row-header-btn-desc'>
                 Clone
               </div>
             </div>
-            <div className="item-row-header-btn" name="edit" onClick={this.clickHandler}>
+            <div className='item-row-header-btn' name='edit' onClick={this.clickHandler}>
               &times;
-              <div className="item-row-header-btn-desc">
+              <div className='item-row-header-btn-desc'>
                 Delete
               </div>
             </div>
           </div>
         </div>
-        <div className="item-row-body" onClick={this.editClikHandler}>
-          <label>{label} <span className="required-star">{required ? '*' : ''}</span></label>
+        <div className='item-row-body' onClick={this.editClikHandler}>
+          <label>{label} <span className='required-star'>{required ? '*' : ''}</span></label>
           <input
             type={type}
             placeholder={placeHolder}
             value={value}
+            title={title}
             readOnly
-            className="item-row-input" />
-          <div className="item-description">
+            className='item-row-input' />
+          <div className='item-description'>
            {description}
           </div>
         </div>
