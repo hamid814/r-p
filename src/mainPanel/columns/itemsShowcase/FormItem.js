@@ -74,7 +74,7 @@ export class FormItem extends Component {
             value={value}
             title={title}
             readOnly
-            className='item-row-input' />
+            className='item-row-input my-0' />
           <div className='item-description'>
            {description}
           </div>

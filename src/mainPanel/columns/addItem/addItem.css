@@ -27,30 +27,30 @@
   border-radius: 0.57vh;
 }
 
-.close .add-item-group-body {
+.closed .add-item-group-body {
   display: none;
 }
 
-.close .add-item-group-header {
+.closed .add-item-group-header {
   margin-left: 1.43vh;
   margin-right: 1.43vh;
 }
 
-.close .add-item-group-header:hover {
+.closed .add-item-group-header:hover {
   margin-left: 0;
   margin-right: 0;
 }
 
-.open .add-item-group-body {
+.opened .add-item-group-body {
   animation: showBtnsAnim 0.3s ease-in-out;
   display: grid;
 }
 
-.open .add-item-group-header {
+.opened .add-item-group-header {
   background: #66cc99;
 }
 
-.open .add-item-group-header:hover {
+.opened .add-item-group-header:hover {
   background: #66cc99;
 }
 

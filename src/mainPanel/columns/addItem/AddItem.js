@@ -8,16 +8,16 @@ export class AddItem extends Component {
   }
   headerClickHandler = (event) => {
     const groups = document.querySelectorAll('.add-item-group');
-    if(event.target.parentElement.classList.contains('open')) {
-      event.target.parentElement.classList.remove('open');
-      event.target.parentElement.classList.add('close');
-    } else if(event.target.parentElement.classList.contains('close')) {
+    if(event.target.parentElement.classList.contains('opened')) {
+      event.target.parentElement.classList.remove('opened');
+      event.target.parentElement.classList.add('closed');
+    } else if(event.target.parentElement.classList.contains('closed')) {
       for(let group of groups) {
-        group.classList.remove('open');
-        group.classList.add('close');
+        group.classList.remove('opened');
+        group.classList.add('closed');
       }
-      event.target.parentElement.classList.add('open');
-      event.target.parentElement.classList.remove('close');
+      event.target.parentElement.classList.add('opened');
+      event.target.parentElement.classList.remove('closed');
     }
   }
   onClickHandler = (event) => {
@@ -32,7 +32,7 @@ export class AddItem extends Component {
             Add Item
           </h2>
           <div className='column-body'>
-            <div className='add-item-group close'>
+            <div className='add-item-group closed'>
               <div className='add-item-group-header' onClick={this.headerClickHandler}>
                 primary fields
               </div>
@@ -93,7 +93,7 @@ export class AddItem extends Component {
                 </button>
               </div>
             </div>
-            <div className='add-item-group close'>
+            <div className='add-item-group closed'>
               <div className='add-item-group-header' onClick={this.headerClickHandler}>
                 advanced fileds
               </div>
@@ -112,7 +112,7 @@ export class AddItem extends Component {
                 </button>
               </div>
             </div>
-            <div className='add-item-group close'>
+            <div className='add-item-group closed'>
               <div className='add-item-group-header' onClick={this.headerClickHandler}>
                 premaid fileds
               </div>

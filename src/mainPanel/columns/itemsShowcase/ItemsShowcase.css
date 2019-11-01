@@ -123,6 +123,7 @@
   padding: 0.72vh 1.3vh;
   cursor: auto;
   font-size: 1.9vh;
+  width: 70% !important;
 }
 
 .item-row-active .item-row-body {
