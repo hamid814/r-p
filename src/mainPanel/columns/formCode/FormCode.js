@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import './formCode.css';
 
 const FormCode = ({ info: { action, method, title, description, submitText }, form }) => {
+  const [copyText, setCopyText] = useState('copy')
   const codeContainer = useRef(null);
+  const finalCode = useRef(null);
 
   useEffect(() => {
     const form = document.createElement('form');
@@ -37,8 +39,16 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
 
     codeContainer.current.innerHTML = ''
     codeContainer.current.appendChild(form)
+
+    setCopyText('copy');
     // eslint-disable-next-line
-  }, [action, method, title, description, submitText]);
+  }, [action, method, title, description, submitText, form]);
+
+  const copy = () => {
+    finalCode.current.select()
+    document.execCommand('copy')
+    setCopyText('copied');
+  }
 
   return (
     <>
@@ -46,9 +56,12 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
         Your Code
       </h2>
       <div id='form-code' className='column-body'>
-        <textarea value={codeContainer.current ? codeContainer.current.innerHTML : ''} readOnly>
+        <textarea id='final-code' ref={finalCode} value={codeContainer.current ? codeContainer.current.innerHTML : ''} readOnly>
             
         </textarea>
+        <button id='copy-code' onClick={copy}>
+          {copyText}
+        </button>
         <div ref={codeContainer} className='d-n'>
           {/* form is created in this div and then the textarea value = this.innerHTML */}
         </div>
