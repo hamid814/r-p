@@ -206,7 +206,7 @@ export class MainPanel extends Component {
       }
     },
     activeId: '',
-    formStatus: 'edit'
+    formStatus: 'code'
   }
   setFormStatus = (formStatus) => {
     this.setState({
@@ -313,20 +313,11 @@ export class MainPanel extends Component {
       activeId : this.state.formItems[0].id
     });
   }
-  componentWillUpdate(nextProps, nextState) {
-    console.log(this.state.formStatus === 'edit')
-  }
-
-  gridCulumns = {
-    gridTemplateColumns: this.state.formStatus === 'edit'
-      && '6fr 7fr 7fr 1fr'
-      // : '20fr 1fr'
-  }
 
   render() {
     return (
       <>
-        <div id='main-panel' style={this.gridCulumns} onClick={this.onClickHandler}>
+        <div id='main-panel' className={`${this.state.formStatus === 'edit' ? 'grid-4-cul' : 'grid-2-cul'}`} onClick={this.onClickHandler}>
           <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <AddItem
               onClick={this.onAdd} />

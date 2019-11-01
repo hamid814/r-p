@@ -15,6 +15,11 @@
   padding-top: 2vh;
 }
 
+/* the number is to prevent same names */
+.active123456 {
+  background: rgb(6, 240, 189);
+}
+
 .form-panel-item:hover {
   background: rgb(78, 160, 119);
 }
