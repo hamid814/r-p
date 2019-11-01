@@ -4,6 +4,8 @@ import AddItem from './columns/addItem/AddItem';
 import ItemsShowcase from './columns/itemsShowcase/ItemsShowcase';
 import EditItem from './columns/editItem/EditItem';
 import FormCode from './columns/formCode/FormCode';
+import PreviewForm from './columns/previewForm/PreviewForm';
+import FormSetting from './columns/formSetting/FormSetting';
 import FormPanel from './columns/formPanel/FormPanel';
 
 import './mainPanel.css';
@@ -347,6 +349,14 @@ export class MainPanel extends Component {
           <div className={`column ${this.state.formStatus !== 'code' && 'd-n'}`}>
             <FormCode
               form={this.state.formItems} />
+          </div>
+          <div className={`column ${this.state.formStatus !== 'preview' && 'd-n'}`}>
+            <PreviewForm
+              form={this.state.formItems} />
+          </div>
+          <div className={`column ${this.state.formStatus !== 'setting' && 'd-n'}`}>
+            <FormSetting
+              info={this.state.formInfo} />
           </div>
           <div className='column'>
             <FormPanel

@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-class FormCode extends Component {
+export class PreviewForm extends Component {
   render() {
     return (
       <>
         <h2 className='column-header'>
-          Your Code
+          Your Form
         </h2>
       </>
     )
   }
 }
 
-export default FormCode
+export default PreviewForm

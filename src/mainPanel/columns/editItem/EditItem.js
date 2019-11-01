@@ -29,7 +29,7 @@ export class EditItem extends Component {
   render() {
     if(this.props.id !== '') {
       return (
-        <React.Fragment>
+        <>
           <div id='edit-item'>
             <h2 className='column-header'>
               Edit Item
@@ -54,7 +54,7 @@ export class EditItem extends Component {
               </div>
             </div>
           </div>
-        </React.Fragment>
+        </>
       )
     } else {
       return (
