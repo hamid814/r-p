@@ -13,24 +13,26 @@ export class PreviewForm extends Component {
           Your Form
         </h2>
         <div id='preview-form' className='column-body'>
-          {
-            title !== ''
-              && <h2>{ title }</h2>
-          }
-          {
-            description !== ''
-              && <h4>{ description }</h4>
-          }
-          {
-            this.props.form.map(item => (
-              <PreviewFormItem key={item.id} item={item} />
-            ))
-          }
-          {
-            this.props.form.length === 0
-              && <NoItemInForm />
-          }
-          <input type='submit' value={submitText}/>
+          <div className='preview-form-wrapper'>
+            {
+              title !== ''
+                && <h2>{ title }</h2>
+            }
+            {
+              description !== ''
+                && <h4>{ description }</h4>
+            }
+            {
+              this.props.form.map(item => (
+                <PreviewFormItem key={item.id} item={item} />
+              ))
+            }
+            {
+              this.props.form.length === 0
+                && <NoItemInForm />
+            }
+            <input type='submit' value={submitText}/>
+          </div>
         </div>
       </>
     )

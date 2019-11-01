@@ -1,8 +1,11 @@
 #preview-form {
-  padding-top: 4.5vh;
+  padding-top: 5.5vh;
   margin: 0 auto;
-  /* border: 1px solid red; */
-  width: 60%;
+}
+
+.preview-form-wrapper {
+  width: 40%;
+  margin: 0 auto;
 }
 
 #preview-form h2 {
@@ -34,7 +37,7 @@
 .preview-form-item input[type="password"],
 .preview-form-item input[type="number"],
 .preview-form-item input[type="date"] {
-  width: 50%;
+  width: 100%;
   padding: 0.45rem;
   border: 1px solid #ccc;
 }

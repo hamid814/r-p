@@ -208,7 +208,7 @@ export class MainPanel extends Component {
       }
     },
     activeId: '',
-    formStatus: 'code'
+    formStatus: 'preview'
   }
   setFormStatus = (formStatus) => {
     this.setState({
