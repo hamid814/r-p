@@ -301,24 +301,6 @@ export class MainPanel extends Component {
   resetHandler = (id, item) => {
     // i think it doesnt need the item, every thing is always to this.state saved, so... just the id...
   }
-  formPanelClicked = (action) =>  {
-    if(action === 'previewform') {
-      this.previewform();
-    } else if(action === 'formsetting') {
-      this.formsetting();
-    } else if(action === 'generatecode') {
-      this.generatecode();
-    }
-  }
-  previewform = () => {
-    
-  }
-  formsetting = () => {
-    
-  }
-  generatecode = () => {
-    
-  }
   // for shrink and expand the footer
   onClickHandler = () => {
     this.props.onClick();
@@ -328,15 +310,23 @@ export class MainPanel extends Component {
       activeId : this.state.formItems[0].id
     });
   }
+  componentWillUpdate(nextProps, nextState) {
+    console.log(this.state.formStatus === 'edit')
+  }
+
+  gridCulumns = {
+    gridTemplateColumns: this.state.formStatus === 'edit'
+      && '6fr 7fr 7fr 1fr'
+      // : '20fr 1fr'
+  }
+
   render() {
     return (
       <>
-        <div id='main-panel' onClick={this.onClickHandler}>
+        <div id='main-panel' style={this.gridCulumns} onClick={this.onClickHandler}>
           <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <AddItem
               onClick={this.onAdd} />
-            <FormPanel
-              onClick={this.formPanelClicked} />
           </div>
           <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <ItemsShowcase
@@ -353,8 +343,18 @@ export class MainPanel extends Component {
               endEdit={this.endEdit}
               onReset={this.resetHandler} />
           </div>
+          <div className={`column ${this.state.formStatus !== 'code' && 'd-n'}`}>
+            <EditItem
+              items={this.state.formItems}
+              id={this.state.activeId}
+              onChange={this.onEdit}
+              endEdit={this.endEdit}
+              onReset={this.resetHandler} />
+          </div>
           <div className='column'>
-            <FormPanel />
+            <FormPanel
+              onClick={this.setFormStatus}
+              formStatus={this.state.formStatus} />
           </div>
         </div>
       </>

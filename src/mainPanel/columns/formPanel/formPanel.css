@@ -1,7 +1,5 @@
 #form-panel {
-  margin-left: 1.7em;
-  bottom: 0;
-  /* position: absolute; */
+  margin-top: 5vh;
 }
 
 .form-panel-item {
@@ -11,9 +9,10 @@
   background: #6c9;
   border-radius: 0.71vh;
   text-align: center;
-  margin: 0 1vh;
+  margin: 0.7vh;
   cursor: pointer;
   position: relative;
+  padding-top: 2vh;
 }
 
 .form-panel-item:hover {
@@ -45,7 +44,7 @@
     left: -9vw;
   }
   to {
-    opacity: 0.9;
+    opacity: 0.85;
     left: -9.5vw;
   }
 }

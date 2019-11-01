@@ -44,7 +44,7 @@ export class EditingItemPresenter extends Component {
     const { id , value , idname , placeHolder , label , classname , description , required , readOnly } = this.state;
     return (
       <React.Fragment>
-        {id}
+        {process.env.NODE_ENV === 'development' && id}
         <div className='edit-item-row-g'>
             <label className='edit-label'><code>label:</code></label>
             <br />

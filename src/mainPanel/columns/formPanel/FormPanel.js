@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import './formPanel.css';
 
-export class FormPanel extends Component {
+class FormPanel extends Component {
   previewForm = () => {
-    this.props.onClick('previewform');
+    this.props.onClick('preview');
   }
   formSetting = () => {
-    this.props.onClick('formsetting');
+    this.props.onClick('setting');
   }
   generateCode = () => {
-    this.props.onClick('generatecode');
+    this.props.onClick('code');
+  }
+  backToEdit = () => {
+    this.props.onClick('edit');
   }
   render() {
     return (
@@ -17,24 +20,27 @@ export class FormPanel extends Component {
           <div id='form-panel'>
             <div
               className='form-panel-item'
-              name='previewForm'
               onClick={this.previewForm}>
-              I
+              P
               <span className='form-panel-item-desc'>Preview Form</span>
             </div>
             <div
               className='form-panel-item'
-              name='formSetting'
               onClick={this.formSetting}>
-              I
+              S
               <span className='form-panel-item-desc'>Form Setting</span>
             </div>
             <div
               className='form-panel-item'
-              name='generateCode'
               onClick={this.generateCode}>
-              I
+              C
               <span className='form-panel-item-desc'>Generate Code</span>
+            </div>
+            <div
+              className='form-panel-item'
+              onClick={this.backToEdit}>
+              E
+              <span className='form-panel-item-desc'>Edit From</span>
             </div>
           </div>
         </>
