@@ -21,25 +21,25 @@ class FormPanel extends Component {
             <div
               className={`form-panel-item ${this.props.formStatus === 'edit' && 'active123456'}`}
               onClick={this.backToEdit}>
-              E
+              <i className="fa fa-edit"></i>
               <span className='form-panel-item-desc'>Edit From</span>
             </div>
             <div
               className={`form-panel-item ${this.props.formStatus === 'setting' && 'active123456'}`}
               onClick={this.formSetting}>
-              S
+              <i className="fa fa-cogs"></i>
               <span className='form-panel-item-desc'>Form Setting</span>
             </div>
             <div
               className={`form-panel-item ${this.props.formStatus === 'preview' && 'active123456'}`}
               onClick={this.previewForm}>
-              P
+              <i className="fa fa-eye"></i>
               <span className='form-panel-item-desc'>Preview Form</span>
             </div>
             <div
               className={`form-panel-item ${this.props.formStatus === 'code' && 'active123456'}`}
               onClick={this.generateCode}>
-              C
+              <i className="fa fa-code"></i>
               <span className='form-panel-item-desc'>Generate Code</span>
             </div>
           </div>

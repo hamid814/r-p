@@ -7,6 +7,7 @@ import FormCode from './columns/formCode/FormCode';
 import PreviewForm from './columns/previewForm/PreviewForm';
 import FormSetting from './columns/formSetting/FormSetting';
 import FormPanel from './columns/formPanel/FormPanel';
+import ContactMe from '../ContactMe';
 
 import './mainPanel.css';
 
@@ -323,10 +324,23 @@ export class MainPanel extends Component {
     });
   }
 
+  setContactMe = () => {
+    if(this.state.formStatus === 'contact') {
+      this.setState({
+        formStatus: localStorage.getItem('lastFormStatus')
+      })
+    } else {
+      localStorage.setItem('lastFormStatus', this.state.formStatus)
+      this.setState({
+        formStatus: 'contact'
+      })
+    }
+  }
+
   render() {
     return (
       <>
-        <div id='main-panel' className={`${this.state.formStatus === 'edit' ? 'grid-4-cul' : 'grid-2-cul'}`} onClick={this.onClickHandler}>
+        <div id='main-panel' className={`${this.state.formStatus === 'edit' ? 'grid-4-cul' : this.state.formStatus === 'contact' ? 'grid-1-cul' : 'grid-2-cul'}`} onClick={this.onClickHandler}>
           <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <AddItem
               onClick={this.onAdd} />
@@ -361,11 +375,21 @@ export class MainPanel extends Component {
               info={this.state.formInfo}
               form={this.state.formItems} />
           </div>
-          <div className='column'>
+          <div className={`column ${this.state.formStatus === 'contact' && 'd-n'}`}>
             <FormPanel
               onClick={this.setFormStatus}
               formStatus={this.state.formStatus} />
           </div>
+          <div className={`column ${this.state.formStatus !== 'contact' && 'd-n'}`}>
+            <ContactMe />
+          </div>
+        </div>
+        <div id='contact-me-flag' onClick={this.setContactMe}>
+          {
+            this.state.formStatus !== 'contact'
+              ? 'contact me'
+              : 'back to form'
+          }
         </div>
       </>
     )
