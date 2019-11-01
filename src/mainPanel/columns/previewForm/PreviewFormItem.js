@@ -7,7 +7,7 @@ export class PreviewFormItem extends Component {
       <div className='preview-form-item'>
         {
           label !== ''
-           && <label>{ label }</label>
+           && <label>{ label } {required && '*'}</label>
         }
         {
           readOnly

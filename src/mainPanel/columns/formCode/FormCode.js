@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 
-const FormCode = ({ info: { action, method, title, description }, form }) => {
+import './formCode.css';
+
+const FormCode = ({ info: { action, method, title, description, submitText }, form }) => {
   const codeContainer = useRef(null);
 
   useEffect(() => {
@@ -22,24 +24,33 @@ const FormCode = ({ info: { action, method, title, description }, form }) => {
     formDesc.innerText = description
     description !== '' && form.appendChild(formDesc)
 
+    /* form items be added here */
+
+    const formSubmit = document.createElement('input');
+    formSubmit.type = 'submit'
+    submitText === ''
+      ? formSubmit.value = 'submit'
+      : formSubmit.value = submitText
+    form.appendChild(formSubmit);
+
     console.log(form)
 
     codeContainer.current.innerHTML = ''
     codeContainer.current.appendChild(form)
     // eslint-disable-next-line
-  }, [action, method, title, description]);
+  }, [action, method, title, description, submitText]);
 
   return (
     <>
       <h2 className='column-header'>
         Your Code
       </h2>
-      <div id='final-code' className='column-body'>
+      <div id='form-code' className='column-body'>
         <textarea value={codeContainer.current ? codeContainer.current.innerHTML : ''} readOnly>
             
         </textarea>
         <div ref={codeContainer} className='d-n'>
-
+          {/* form is created in this div and then the textarea value = this.innerHTML */}
         </div>
       </div>
     </>
