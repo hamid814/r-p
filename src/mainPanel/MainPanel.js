@@ -66,7 +66,7 @@ export class MainPanel extends Component {
     ],
     formInfo: {
       title: 'form title',
-      sumbitText: 'sumbit',
+      submitText: 'sumbit',
       description: 'you can enter a small description here',
       action: '',
       method: ''
@@ -312,7 +312,6 @@ export class MainPanel extends Component {
         [info]: value
       }
     });
-    console.log(info, value)
   }
   // for shrink and expand the footer
   onClickHandler = () => {
