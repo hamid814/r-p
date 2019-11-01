@@ -4,7 +4,7 @@ import './addItem.css'
 
 export class AddItem extends Component {
   state = {
-    btns : "email, month, file, time, url, search, radio, tel"
+    btns : 'email, month, file, time, url, search, radio, tel'
   }
   headerClickHandler = (event) => {
     const groups = document.querySelectorAll('.add-item-group');
@@ -27,106 +27,106 @@ export class AddItem extends Component {
   render() {
     return (
       <React.Fragment>
-        <div id="add-item">
-          <h2 className="column-header">
+        <div id='add-item'>
+          <h2 className='column-header'>
             Add Item
           </h2>
-          <div className="column-body">
-            <div className="add-item-group close">
-              <div className="add-item-group-header" onClick={this.headerClickHandler}>
+          <div className='column-body'>
+            <div className='add-item-group close'>
+              <div className='add-item-group-header' onClick={this.headerClickHandler}>
                 primary fields
               </div>
-              <div className="add-item-group-body">
+              <div className='add-item-group-body'>
                 <button
-                  className="add-item-group-btn"
+                  className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name="text">
+                  name='text'>
                   text
                 </button>
                 <button
-                  className="add-item-group-btn"
+                  className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name="password">
+                  name='password'>
                   password
                 </button>
                 <button
-                  className="add-item-group-btn"
+                  className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name="button">
+                  name='button'>
                   button
                 </button>
                 <button
-                  className="add-item-group-btn"
+                  className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name="hidden">
+                  name='hidden'>
                   hidden
                 </button>
                 <button
-                  className="add-item-group-btn"
+                  className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name="checkbox">
+                  name='checkbox'>
                   checkbox
                 </button>
                 <button
-                  className="add-item-group-btn"
+                  className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name="range">
+                  name='range'>
                   range
                 </button>
                 <button
-                  className="add-item-group-btn"
+                  className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name="color">
+                  name='color'>
                   color
                 </button>
                 <button
-                  className="add-item-group-btn"
+                  className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name="date">
+                  name='date'>
                   date
                 </button>
                 <button
-                  className="add-item-group-btn"
+                  className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name="number">
+                  name='number'>
                   number
                 </button>
               </div>
             </div>
-            <div className="add-item-group close">
-              <div className="add-item-group-header" onClick={this.headerClickHandler}>
+            <div className='add-item-group close'>
+              <div className='add-item-group-header' onClick={this.headerClickHandler}>
                 advanced fileds
               </div>
-              <div className="add-item-group-body">
-                <button className="add-item-group-btn">
+              <div className='add-item-group-body'>
+                <button className='add-item-group-btn'>
                   number 1
                 </button>
-                <button className="add-item-group-btn">
+                <button className='add-item-group-btn'>
                   item 2
                 </button>
-                <button className="add-item-group-btn">
+                <button className='add-item-group-btn'>
                   item 3
                 </button>
-                <button className="add-item-group-btn">
+                <button className='add-item-group-btn'>
                   item 4
                 </button>
               </div>
             </div>
-            <div className="add-item-group close">
-              <div className="add-item-group-header" onClick={this.headerClickHandler}>
+            <div className='add-item-group close'>
+              <div className='add-item-group-header' onClick={this.headerClickHandler}>
                 premaid fileds
               </div>
-              <div className="add-item-group-body">
-                <button className="add-item-group-btn">
+              <div className='add-item-group-body'>
+                <button className='add-item-group-btn'>
                   item 1
                 </button>
-                <button className="add-item-group-btn">
+                <button className='add-item-group-btn'>
                   item 2
                 </button>
-                <button className="add-item-group-btn">
+                <button className='add-item-group-btn'>
                   item 3
                 </button>
-                <button className="add-item-group-btn">
+                <button className='add-item-group-btn'>
                   item 4
                 </button>
               </div>
