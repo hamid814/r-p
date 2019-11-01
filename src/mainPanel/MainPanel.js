@@ -327,7 +327,7 @@ export class MainPanel extends Component {
     return (
       <>
         <div id='main-panel' onClick={this.onClickHandler}>
-          <div className='column'>
+          <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <AddItem
               onClick={this.onAdd} />
             <FormPanel

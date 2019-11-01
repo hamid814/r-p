@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
+import './index.css';
 
 import Header from './header/Header';
 import MainPanel from './mainPanel/MainPanel';
@@ -24,19 +25,19 @@ class App extends Component {
   }
   render() {
     return (
-      <React.Fragment>
-        <div id="header">
+      <>
+        <div id='header'>
           <Header />
         </div>
-        <div id="main-body">
+        <div id='main-body'>
           <MainPanel
             onClick={this.startAction} />
         </div>
-        <div id="footer">
+        <div id='footer'>
           <Footer 
             isUp={this.state.isUp} />
         </div>
-      </React.Fragment>
+      </>
     )
   }
   componentDidMount() {
