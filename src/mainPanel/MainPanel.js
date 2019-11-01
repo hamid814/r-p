@@ -205,6 +205,11 @@ export class MainPanel extends Component {
     activeId: '',
     formStatus: 'edit'
   }
+  setFormStatus = (formStatus) => {
+    this.setState({
+      formStatus
+    });
+  }
   onAdd = (name) => {
     const newItem = {
       id: uuid.v4(),
@@ -333,14 +338,14 @@ export class MainPanel extends Component {
             <FormPanel
               onClick={this.formPanelClicked} />
           </div>
-          <div className='column'>
+          <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <ItemsShowcase
               items={this.state.formItems}
               activeIdNumber={this.state.activeId}
               onClick={this.startEdit}
               onClear={this.onClear} />
             </div>
-          <div className='column'>
+          <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <EditItem
               items={this.state.formItems}
               id={this.state.activeId}
@@ -348,9 +353,9 @@ export class MainPanel extends Component {
               endEdit={this.endEdit}
               onReset={this.resetHandler} />
           </div>
-          {/* <div className='column'>
+          <div className='column'>
             <FormPanel />
-          </div> */}
+          </div>
         </div>
       </>
     )

@@ -1,6 +1,6 @@
 #main-panel {
   display: grid;
-  grid-template-columns: 7fr 8fr 8fr;
+  grid-template-columns: 6fr 7fr 7fr 1fr;
   grid-gap: 0.4vh;
   padding: 0.57vh 0.57vh 0;
   background: #f5fcfd;
