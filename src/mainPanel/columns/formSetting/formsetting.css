@@ -1,4 +1,23 @@
 #form-setting {
-  text-align: center;
-  border: 1px solid red;
+  margin-top: 3vh;
+}
+
+#setting-wrapper {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.setting-item {
+  margin-bottom: 2.9vh;
+}
+
+.setting-item label {
+  display: block;
+  margin-left: .9vw;
+}
+
+.setting-item input, .setting-item select {
+  width: 100%;
+  padding: 0.8vh;
+  border: 1px solid #ccc;
 }

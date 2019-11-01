@@ -19,6 +19,12 @@ class FormPanel extends Component {
         <>
           <div id='form-panel'>
             <div
+              className={`form-panel-item ${this.props.formStatus === 'edit' && 'active123456'}`}
+              onClick={this.backToEdit}>
+              E
+              <span className='form-panel-item-desc'>Edit From</span>
+            </div>
+            <div
               className={`form-panel-item ${this.props.formStatus === 'setting' && 'active123456'}`}
               onClick={this.formSetting}>
               S
@@ -35,12 +41,6 @@ class FormPanel extends Component {
               onClick={this.generateCode}>
               C
               <span className='form-panel-item-desc'>Generate Code</span>
-            </div>
-            <div
-              className={`form-panel-item ${this.props.formStatus === 'edit' && 'active123456'}`}
-              onClick={this.backToEdit}>
-              E
-              <span className='form-panel-item-desc'>Edit From</span>
             </div>
           </div>
         </>

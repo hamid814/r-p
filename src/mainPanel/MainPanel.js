@@ -207,7 +207,7 @@ export class MainPanel extends Component {
       }
     },
     activeId: '',
-    formStatus: 'setting'
+    formStatus: 'preview'
   }
   setFormStatus = (formStatus) => {
     this.setState({
@@ -346,18 +346,19 @@ export class MainPanel extends Component {
               endEdit={this.endEdit}
               onReset={this.resetHandler} />
           </div>
-          <div className={`column ${this.state.formStatus !== 'code' && 'd-n'}`}>
-            <FormCode
-              form={this.state.formItems} />
-          </div>
-          <div className={`column ${this.state.formStatus !== 'preview' && 'd-n'}`}>
-            <PreviewForm
-              form={this.state.formItems} />
-          </div>
           <div className={`column ${this.state.formStatus !== 'setting' && 'd-n'}`}>
             <FormSetting
               info={this.state.formInfo}
               set={this.formInfoSetter} />
+          </div>
+          <div className={`column ${this.state.formStatus !== 'preview' && 'd-n'}`}>
+            <PreviewForm
+              info={this.state.formInfo}
+              form={this.state.formItems} />
+          </div>
+          <div className={`column ${this.state.formStatus !== 'code' && 'd-n'}`}>
+            <FormCode
+              form={this.state.formItems} />
           </div>
           <div className='column'>
             <FormPanel
