@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 const FormCode = () => {
+  const codeContainer = useRef(null);
+
   return (
     <>
       <h2 className='column-header'>
@@ -10,6 +12,9 @@ const FormCode = () => {
         <textarea>
             
         </textarea>
+        <div className='d-n'>
+
+        </div>
       </div>
     </>
   )
