@@ -3,6 +3,7 @@ import uuid from 'uuid';
 import AddItem from './columns/addItem/AddItem';
 import ItemsShowcase from './columns/itemsShowcase/ItemsShowcase';
 import EditItem from './columns/editItem/EditItem';
+import FormCode from './columns/formCode/FormCode';
 import FormPanel from './columns/formPanel/FormPanel';
 
 import './mainPanel.css';
@@ -334,7 +335,7 @@ export class MainPanel extends Component {
               activeIdNumber={this.state.activeId}
               onClick={this.startEdit}
               onClear={this.onClear} />
-            </div>
+          </div>
           <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <EditItem
               items={this.state.formItems}
@@ -344,12 +345,8 @@ export class MainPanel extends Component {
               onReset={this.resetHandler} />
           </div>
           <div className={`column ${this.state.formStatus !== 'code' && 'd-n'}`}>
-            <EditItem
-              items={this.state.formItems}
-              id={this.state.activeId}
-              onChange={this.onEdit}
-              endEdit={this.endEdit}
-              onReset={this.resetHandler} />
+            <FormCode
+              form={this.state.formItems} />
           </div>
           <div className='column'>
             <FormPanel
