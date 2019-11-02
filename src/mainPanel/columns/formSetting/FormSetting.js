@@ -6,11 +6,19 @@ export class FormSetting extends Component {
   changeHandler = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    this.props.set(name, value)
+    if(name !== 'hasReset') {
+      this.props.set(name, value);
+    } else {
+      this.props.set(name, !this.props.info.hasReset)
+    }
+  }
+
+  onLineClicked = () => {
+    this.props.set('hasReset', !this.props.info.hasReset)
   }
 
   render() {
-    const {title, submitText, description, action, method} = this.props.info
+    const {title, submitText, description, action, method, hasReset, resetText} = this.props.info
     return (
       <>
         <h2 className='column-header'>
@@ -38,6 +46,17 @@ export class FormSetting extends Component {
               <label>Description</label>
               <input type='text' name='description' value={description} onChange={this.changeHandler}/>
             </div>
+            <div className='setting-item' onClick={this.onLineClicked}>
+              <input type='checkbox' name='hasReset' checked={hasReset} onChange={this.changeHandler}/>
+              <label>Form has reset button</label>
+            </div>
+            {
+              hasReset &&
+                <div className='setting-item'>
+                  <label>Reset botton text</label>
+                  <input type='text' name='resetText' value={resetText} onChange={this.changeHandler}/>
+                </div>
+            }
             <div className='setting-item'>
               <label>Sumbit text</label>
               <input type='text' name='submitText' value={submitText} onChange={this.changeHandler}/>

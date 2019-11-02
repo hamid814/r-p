@@ -179,3 +179,7 @@ button:hover {
 .d-n {
   display: none !important;
 }
+
+.cursor-d {
+  cursor: default;
+}

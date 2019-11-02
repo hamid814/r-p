@@ -36,7 +36,7 @@ export class EditingItemPresenter extends Component {
   }
   onCheckHandler = (event) => {
     const idNumber = this.state.id;
-    const name = event.target.name;
+    const name = event.target.id;
     const value = !this.state[name];
     this.props.onChange(idNumber, name, value);
   }
@@ -100,19 +100,19 @@ export class EditingItemPresenter extends Component {
               className='edit-input edit-input-textarea'
               onChange={this.onChangeHandler} />
           </div>
-          <div className='edit-item-row-g'>
+          <div className='edit-item-row-g' id='required' onClick={this.onCheckHandler}>
             <input
               type='checkbox'
-              name='required'
+              id='required'
               checked={ required }
-              onChange={this.onCheckHandler} /> Required
+              onChange={this.onCheckHandler} /> <span id='required' className='cursor-d'>Required</span>
           </div>
-          <div className='edit-item-row-g'>
+          <div className='edit-item-row-g' id='required' onClick={this.onCheckHandler}>
             <input
               type='checkbox'
-              name='readOnly'
+              id='readOnly'
               checked={ readOnly }
-              onChange={this.onCheckHandler} /> Readonly
+              onChange={this.onCheckHandler} /> <span id='readOnly' className='cursor-d'>Readonly</span>
           </div>
       </>
     )

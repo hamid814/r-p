@@ -6,7 +6,7 @@ import './previewForm.css';
 
 export class PreviewForm extends Component {
   render() {
-    const { title, description, submitText } = this.props.info;
+    const { title, description, submitText, hasReset, resetText } = this.props.info;
     return (
       <>
         <h2 className='column-header'>
@@ -30,6 +30,10 @@ export class PreviewForm extends Component {
             {
               this.props.form.length === 0
                 && <NoItemInForm />
+            }
+            {
+              hasReset
+              &&  <input type='reset' value={resetText}/>
             }
             <input type='submit' value={submitText}/>
           </div>

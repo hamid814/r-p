@@ -3,23 +3,73 @@
 }
 
 #contact-wrapper {
-  border: 1px solid red;
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  padding: 6vh;
+  margin: 10vh 5vw 12vh;
+  padding: 8vh 5vw 10vh;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3. 1fr);
   grid-template-areas: "first first second second third third" "first first second second third third" "forth forth forth forth forth forth";
-  gap: 6vh;
+  gap: 5vh;
+}
+
+#contact-wrapper:hover .contact-item {
+  border: 1px solid #999;
 }
 
 .contact-item {
-  /* font-size: 3vh; */
-  border: 1px solid black;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: 500ms;
+  box-shadow: -10px 10px 0px 0px rgba(29,170,199,0.75);
+}
+
+.contact-item:hover {
+  border-color: #444 !important;
+  box-shadow: -15px 15px 0 0 rgba(29, 170, 199, 0.75);
+}
+
+.contact-top-row {
+  width: 24.4vw;
+  height: 20vh;
+  padding: 9vh 3vw;
+  margin-top: 4vh;
+  font-size: 4vh;
+}
+
+.contact-top-row:hover {
+  padding: 4vh 4vw;
+  background: #eee;
+}
+
+.hover-text {
+  opacity: 0;
+}
+
+.contact-item:hover .hover-text {
+  opacity: .6;
+  animation: hoverTextAnim 500ms ease-in;
+}
+
+@keyframes hoverTextAnim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    margin-left: 2vh;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.7;
+    margin-left: 0;
+  }
 }
 
 #contact-me-twitter {
@@ -35,6 +85,9 @@
 }
 
 #contact-me-portfolio {
-  border: 1px solid black;
   grid-area: forth;
+  text-align: center;
+  font-size: 6vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }

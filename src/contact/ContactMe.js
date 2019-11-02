@@ -30,8 +30,11 @@ const ContactMe = () => {
           <ContactItem key={contact.faName} contact={contact} />
         ))
       }
-      <div id='contact-me-portfolio'>
+      <div className='contact-item' id='contact-me-portfolio'>
         portfolio.me
+        <div className='hover-text'>
+          email
+        </div>
       </div>
     </div>
   )

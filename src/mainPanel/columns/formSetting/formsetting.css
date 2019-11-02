@@ -21,3 +21,8 @@
   padding: 0.8vh;
   border: 1px solid #ccc;
 }
+
+.setting-item input[type="checkbox"], .setting-item input[type="checkbox"]~label {
+  width: initial;
+  display: inline-block;
+}

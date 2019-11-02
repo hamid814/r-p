@@ -66,9 +66,11 @@ export class MainPanel extends Component {
       }
     ],
     formInfo: {
-      title: 'form title',
-      submitText: 'sumbit',
-      description: 'you can enter a small description here',
+      title: 'Form title',
+      submitText: 'Sumbit',
+      hasReset: false,
+      resetText: 'Reset',
+      description: 'You can enter a small description here',
       action: '',
       method: ''
     },
@@ -208,7 +210,7 @@ export class MainPanel extends Component {
       }
     },
     activeId: '',
-    formStatus: 'contact'
+    formStatus: 'setting'
   }
   setFormStatus = (formStatus) => {
     this.setState({
