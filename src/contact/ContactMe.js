@@ -6,13 +6,16 @@ import './contactMe.css';
 const ContactMe = () => {
   const [connectionList, setConnectionList] = useState([
     {
-      faName: 'instagram'
+      name: 'twitter',
+      faName: 'fab fa-twitter'
     },
     {
-      faName: 'twitter'
+      name: 'email',
+      faName: 'far fa-envelope'
     },
     {
-      faName: 'envelope-o'
+      name: 'github',
+      faName: 'fab fa-github'
     }
   ])
 
@@ -21,15 +24,15 @@ const ContactMe = () => {
       {/* github
       tweeter
       portfolio
-      email
-      phone number
-      ... */}
-      me
+      email*/}
       {
         connectionList.map(contact => (
           <ContactItem key={contact.faName} contact={contact} />
         ))
       }
+      <div id='contact-me-portfolio'>
+        portfolio.me
+      </div>
     </div>
   )
 }

@@ -9,4 +9,32 @@
   bottom: 0;
   right: 0;
   left: 0;
+  padding: 6vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3. 1fr);
+  grid-template-areas: "first first second second third third" "first first second second third third" "forth forth forth forth forth forth";
+  gap: 6vh;
+}
+
+.contact-item {
+  /* font-size: 3vh; */
+  border: 1px solid black;
+}
+
+#contact-me-twitter {
+  grid-area: first;
+}
+
+#contact-me-email {
+  grid-area: second;
+}
+
+#contact-me-github {
+  grid-area: third;
+}
+
+#contact-me-portfolio {
+  border: 1px solid black;
+  grid-area: forth;
 }

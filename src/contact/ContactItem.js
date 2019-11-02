@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ContactItem = ({ contact: { faName } }) => {
+const ContactItem = ({ contact: { name, faName } }) => {
   return (
-    <div className='contact-item'>
-      <i className={`fa fa-${faName}`}></i>
+    <div className='contact-item' id={`contact-me-${name}`}>
+      <i className={`${faName}`}></i>
     </div>
   )
 }
