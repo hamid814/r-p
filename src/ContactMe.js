@@ -2,13 +2,13 @@ import React from 'react'
 
 const ContactMe = () => {
   return (
-    <div>
-      github
+    <div className='contact-wrapper'>
+      {/* github
       tweeter
       portfolio
       email
       phone number
-      ...
+      ... */}``
     </div>
   )
 }

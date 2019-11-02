@@ -208,7 +208,7 @@ export class MainPanel extends Component {
       }
     },
     activeId: '',
-    formStatus: 'preview'
+    formStatus: 'contact'
   }
   setFormStatus = (formStatus) => {
     this.setState({
@@ -328,6 +328,8 @@ export class MainPanel extends Component {
     if(this.state.formStatus === 'contact') {
       this.setState({
         formStatus: localStorage.getItem('lastFormStatus')
+          ? localStorage.getItem('lastFormStatus')
+          : 'edit'
       })
     } else {
       localStorage.setItem('lastFormStatus', this.state.formStatus)

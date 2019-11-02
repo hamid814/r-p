@@ -174,3 +174,8 @@ button:hover {
     opacity: 1;
   }
 }
+/* utils */
+
+.d-n {
+  display: none !important;
+}
