@@ -7,7 +7,7 @@ import FormCode from './columns/formCode/FormCode';
 import PreviewForm from './columns/previewForm/PreviewForm';
 import FormSetting from './columns/formSetting/FormSetting';
 import FormPanel from './columns/formPanel/FormPanel';
-import ContactMe from '../ContactMe';
+import ContactMe from '../contact/ContactMe';
 
 import './mainPanel.css';
 
@@ -382,7 +382,7 @@ export class MainPanel extends Component {
               onClick={this.setFormStatus}
               formStatus={this.state.formStatus} />
           </div>
-          <div className={`column ${this.state.formStatus !== 'contact' && 'd-n'}`}>
+          <div id='contact-me' className={`column ${this.state.formStatus !== 'contact' && 'd-n'}`}>
             <ContactMe />
           </div>
         </div>
