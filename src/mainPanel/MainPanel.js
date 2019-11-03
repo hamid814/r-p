@@ -38,7 +38,7 @@ export class MainPanel extends Component {
         name: 'new name',
         type: 'text',
         label: 'new title',
-        idname: 'some id',
+        idname: 'some-id',
         required: true,
         readOnly: false,
         hasMaxChar: false,
@@ -54,7 +54,7 @@ export class MainPanel extends Component {
         name: 'nme of btn',
         type: 'password',
         label: 'another title',
-        idname: 'id',
+        idname: 'id-here',
         required: true,
         readOnly: false,
         hasMaxChar: false,
@@ -224,7 +224,7 @@ export class MainPanel extends Component {
       },
     },
     activeId: '',
-    formStatus: 'edit'
+    formStatus: 'code'
   }
   setFormStatus = (formStatus) => {
     this.setState({

@@ -3,29 +3,33 @@ import React, { useState, useEffect, useRef } from 'react'
 import './formCode.css';
 
 const FormCode = ({ info: { action, method, title, description, submitText }, form }) => {
-  const [copyText, setCopyText] = useState('')
+  const [copyBtnText, setCopyBtnText] = useState('')
   const codeContainer = useRef(null);
   const finalCode = useRef(null);
 
   useEffect(() => {
-    const form = document.createElement('form');
+    const theForm = document.createElement('form');
 
     if(action !== '' && action) {
-      form.action = action
+      theForm.action = action
     }
 
     if(method !== '' && method && method !== 'none') {
-      form.method = method
+      theForm.method = method
     }
 
     const formTitle = document.createElement('h2');
     formTitle.innerText = title
-    title !== '' && form.appendChild(formTitle)
+    title !== '' && theForm.appendChild(formTitle)
 
     const formDesc = document.createElement('h4');
     formDesc.innerText = description
-    description !== '' && form.appendChild(formDesc)
+    description !== '' && theForm.appendChild(formDesc)
 
+    /* form items be added here */
+    form.forEach(item => {
+      theForm.appendChild(getItemCode(item))
+    })
     /* form items be added here */
 
     const formSubmit = document.createElement('input');
@@ -33,21 +37,73 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
     submitText === ''
       ? formSubmit.value = 'submit'
       : formSubmit.value = submitText
-    form.appendChild(formSubmit);
+    theForm.appendChild(formSubmit);
 
-    console.log(form)
+    console.log(theForm)
 
     codeContainer.current.innerHTML = ''
-    codeContainer.current.appendChild(form)
+    codeContainer.current.appendChild(theForm)
 
-    setCopyText('copy');
+    // codeContainer.current.innerHTML.replace('><', `>
+// <`)
+
+    setCopyBtnText('copy');
     // eslint-disable-next-line
   }, [action, method, title, description, submitText, form]);
+
+  const getItemCode = (item) => {
+    const itemContainer = document.createElement('div');
+
+    const itemLabel = document.createElement('label');
+    itemLabel.innerText = item.label;
+
+    itemContainer.appendChild(itemLabel);
+
+    const itemCode = document.createElement('input');
+    itemCode.type = item.type
+
+    if(item.value !== '') {
+      itemCode.setAttribute('value', item.value)
+    }
+    
+    if(item.placeHolder !== '') {
+      itemCode.setAttribute('placeholder', item.placeHolder)
+    }
+    
+    if(item.idname !== '') {
+      itemCode.setAttribute('id', item.idname)
+    }
+    
+    if(item.classname !== '') {
+      itemCode.setAttribute('class', item.classname)
+    }
+    
+    if(item.required) {
+      itemCode.setAttribute('required', '')
+    }
+    
+    if(item.readOnly) {
+      itemCode.setAttribute('readonly', '')
+    }
+
+    itemContainer.appendChild(itemCode);
+
+    const itemDesc = document.createElement('div');
+    itemDesc.innerText = item.description;
+
+    if(item.description !== '') {
+      itemContainer.appendChild(itemDesc);
+    }
+
+    console.log(itemContainer)
+
+    return (itemContainer)
+  }
 
   const copy = () => {
     finalCode.current.select()
     document.execCommand('copy')
-    setCopyText('copied');
+    setCopyBtnText('copied');
   }
 
   return (
@@ -60,7 +116,7 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
             
         </textarea>
         <button id='copy-code' onClick={copy}>
-          {copyText}
+          {copyBtnText}
         </button>
         <div ref={codeContainer} className='d-n'>
           {/* form is created in this div and then the textarea value = this.innerHTML */}
