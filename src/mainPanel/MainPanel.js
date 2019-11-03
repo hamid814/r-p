@@ -146,7 +146,6 @@ export class MainPanel extends Component {
         value: '',
         isChecked: false,
         checkText: 'text',
-        placeHolder: ''
       },
       range: {
         name: '',

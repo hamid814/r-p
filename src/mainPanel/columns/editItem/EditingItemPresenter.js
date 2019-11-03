@@ -91,7 +91,6 @@ export class EditingItemPresenter extends Component {
           <div className='edit-item-row-g'>
             <label className='edit-label'><code>placeholder:</code></label>
             <br />
-            { console.log(placeHolder) }
             <input
               value={ placeHolder }
               name='placeHolder'

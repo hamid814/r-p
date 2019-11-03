@@ -5,7 +5,6 @@
   cursor: pointer;
   color: #f9f9ff;
   margin: 0;
-  display: inline-block;
   float: right;
   margin-right: -2vh;
   height: 4.3vh;
@@ -59,7 +58,6 @@
 }
 
 .item-row-header-btn-panel {
-  display: inline-block;
   float: right;
 }
 
