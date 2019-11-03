@@ -97,6 +97,54 @@ export class AddItem extends Component {
                   name='email'>
                   email
                 </button>
+                <button
+                  className='add-item-group-btn'
+                  onClick={this.onClickHandler}
+                  name='file'>
+                  file
+                </button>
+                <button
+                  className='add-item-group-btn'
+                  onClick={this.onClickHandler}
+                  name='file'>
+                  file
+                </button>
+                <button
+                  className='add-item-group-btn'
+                  onClick={this.onClickHandler}
+                  name='image'>
+                  image
+                </button>
+                <button
+                  className='add-item-group-btn'
+                  onClick={this.onClickHandler}
+                  name='month'>
+                  month
+                </button>
+                <button
+                  className='add-item-group-btn'
+                  onClick={this.onClickHandler}
+                  name='radio'>
+                  radio
+                </button>
+                <button
+                  className='add-item-group-btn'
+                  onClick={this.onClickHandler}
+                  name='tel'>
+                  tel
+                </button>
+                <button
+                  className='add-item-group-btn'
+                  onClick={this.onClickHandler}
+                  name='time'>
+                  time
+                </button>
+                <button
+                  className='add-item-group-btn'
+                  onClick={this.onClickHandler}
+                  name='url'>
+                  url
+                </button>
               </div>
             {/* </div> */}
             {/* <div className='add-item-group closed'> */}
