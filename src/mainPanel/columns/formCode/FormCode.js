@@ -69,6 +69,10 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
     if(item.placeHolder !== '') {
       itemCode.setAttribute('placeholder', item.placeHolder)
     }
+
+    if(item.name !== '') {
+      itemCode.setAttribute('name', item.name)
+    }
     
     if(item.idname !== '') {
       itemCode.setAttribute('id', item.idname)

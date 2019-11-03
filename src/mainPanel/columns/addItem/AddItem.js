@@ -106,14 +106,8 @@ export class AddItem extends Component {
                 <button
                   className='add-item-group-btn'
                   onClick={this.onClickHandler}
-                  name='file'>
-                  file
-                </button>
-                <button
-                  className='add-item-group-btn'
-                  onClick={this.onClickHandler}
-                  name='image'>
-                  image
+                  name='week'>
+                  week
                 </button>
                 <button
                   className='add-item-group-btn'
@@ -126,12 +120,6 @@ export class AddItem extends Component {
                   onClick={this.onClickHandler}
                   name='radio'>
                   radio
-                </button>
-                <button
-                  className='add-item-group-btn'
-                  onClick={this.onClickHandler}
-                  name='tel'>
-                  tel
                 </button>
                 <button
                   className='add-item-group-btn'
