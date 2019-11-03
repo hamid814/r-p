@@ -337,6 +337,7 @@ export class MainPanel extends Component {
       classname: this.state.fieldTypes[name].classname,
       value: this.state.fieldTypes[name].value,
       placeHolder: this.state.fieldTypes[name].placeHolder,
+      isChecked: this.state.fieldTypes[name].isChecked,
       sofp: this.state.fieldTypes[name].sofp
     };
 

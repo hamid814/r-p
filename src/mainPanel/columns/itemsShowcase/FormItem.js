@@ -31,8 +31,11 @@ export class FormItem extends Component {
     const action = 'delete';
     this.props.onClick(id, action, item);
   }
+  onInputClicked = (e) => {
+    e.preventDefault()
+  }
   render() {
-    const { name , type , label , placeHolder , value , description , required, title } = this.props.item;
+    const { name , type , label , placeHolder , value , description , required, title, isChecked } = this.props.item;
     return (
       <div className={this.props.item.id === this.props.activeIdNumber ? 'item-row item-row-active' : 'item-row'}>
         <div className='item-row-header'>
@@ -68,13 +71,29 @@ export class FormItem extends Component {
         </div>
         <div className='item-row-body' onClick={this.editClikHandler}>
           <label>{label} <span className='required-star'>{required ? '*' : ''}</span></label>
-          <input
-            type={type}
-            placeholder={placeHolder}
-            value={value}
-            title={title}
-            readOnly
-            className='item-row-input my-0' />
+          {
+            type !== 'checkbox' &&
+            <input
+              type={type}
+              placeholder={placeHolder}
+              value={value}
+              title={title}
+              readOnly
+              onClick={this.onInputClicked}
+              className='item-row-input my-0' />
+          }
+          {
+            type === 'checkbox' &&
+            <input
+              type={type}
+              placeholder={placeHolder}
+              value={value}
+              title={title}
+              readOnly
+              checked={isChecked}
+              onClick={this.onInputClicked}
+              className='item-row-input my-0' />
+          }
           <div className='item-description'>
            {description}
           </div>

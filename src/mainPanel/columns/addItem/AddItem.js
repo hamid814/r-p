@@ -43,6 +43,7 @@ export class AddItem extends Component {
               {
                 this.state.btns.map(btn => (
                   <button
+                    key={btn}
                     className='add-item-group-btn'
                     onClick={this.onClickHandler}
                     name={btn}>
@@ -50,102 +51,6 @@ export class AddItem extends Component {
                   </button>
                 ))
               }
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='text'>
-                text
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='password'>
-                password
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='button'>
-                button
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='hidden'>
-                hidden
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='checkbox'>
-                checkbox
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='range'>
-                range
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='color'>
-                color
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='date'>
-                date
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='number'>
-                number
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='email'>
-                email
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='file'>
-                file
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='week'>
-                week
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='month'>
-                month
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='radio'>
-                radio
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='time'>
-                time
-              </button>
-              <button
-                className='add-item-group-btn'
-                onClick={this.onClickHandler}
-                name='url'>
-                url
-              </button>
             </div>
           </div>
         </div>

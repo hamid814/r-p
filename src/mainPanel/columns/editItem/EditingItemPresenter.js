@@ -12,10 +12,11 @@ export class EditingItemPresenter extends Component {
     description: '',
     required: false,
     readOnly: false,
-    editValueInputType: ''
+    editValueInputType: '',
+    isChecked: false
   }
   componentWillReceiveProps(nextProps) {
-    const { id , idname , value , placeHolder , type , label , classname , description , required , readOnly, editValueInputType } = nextProps.item;
+    const { id , idname , value , placeHolder , type , label , classname , description , required , readOnly, editValueInputType ,isChecked } = nextProps.item;
     this.setState({
       id,
       value,
@@ -28,6 +29,7 @@ export class EditingItemPresenter extends Component {
       required,
       readOnly,
       editValueInputType,
+      isChecked,
     });
   }
   onChangeHandler = (event) => {
@@ -43,7 +45,7 @@ export class EditingItemPresenter extends Component {
     this.props.onChange(idNumber, name, value);
   }
   render() {
-    const { id , editValueInputType , value , idname , placeHolder , label , classname , description , required , readOnly } = this.state;
+    const { id , type , isChecked , editValueInputType , value , idname , placeHolder , label , classname , description , required , readOnly } = this.state;
     return (
       <>
         {process.env.NODE_ENV === 'development' && id}
@@ -57,7 +59,7 @@ export class EditingItemPresenter extends Component {
               className='edit-input'
               onChange={this.onChangeHandler} />
           </div>
-          <div className='edit-item-row-g'>
+          <div className={`edit-item-row-g ${type === 'checkbox' && 'd-n'}`}>
             <label className='edit-label'><code>value:</code></label>
             <br />
             <input
@@ -66,6 +68,13 @@ export class EditingItemPresenter extends Component {
               name='value'
               className='edit-input'
               onChange={this.onChangeHandler} />
+          </div>
+          <div className={`edit-item-row-g ${type !== 'checkbox' && 'd-n'}`} id='isChecked' onClick={this.onCheckHandler}>
+            <input
+              type='checkbox'
+              id='isChecked'
+              checked={ isChecked }
+              onChange={this.onCheckHandler} /> <span id='isChecked' className='cursor-d'>Checked</span>
           </div>
           <div className='edit-item-row-g'>
             <label className='edit-label'><code>placeholder:</code></label>
