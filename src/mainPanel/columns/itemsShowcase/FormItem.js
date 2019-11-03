@@ -35,7 +35,7 @@ export class FormItem extends Component {
     e.preventDefault()
   }
   render() {
-    const { name , type , label , placeHolder , value , description , required, title, isChecked } = this.props.item;
+    const { name , type , label , placeHolder , value , description , required, title, isChecked, checkText } = this.props.item;
     return (
       <div className={this.props.item.id === this.props.activeIdNumber ? 'item-row item-row-active' : 'item-row'}>
         <div className='item-row-header'>
@@ -84,15 +84,17 @@ export class FormItem extends Component {
           }
           {
             type === 'checkbox' &&
-            <input
-              type={type}
-              placeholder={placeHolder}
-              value={value}
-              title={title}
-              readOnly
-              checked={isChecked}
-              onClick={this.onInputClicked}
-              className='item-row-input my-0' />
+            <>
+              <input
+                type={type}
+                placeholder={placeHolder}
+                value={value}
+                title={title}
+                readOnly
+                checked={isChecked}
+                onClick={this.onInputClicked}
+                className='item-row-input my-0' /> <span className='d-i-b'>{ checkText }</span>
+            </>
           }
           <div className='item-description'>
            {description}

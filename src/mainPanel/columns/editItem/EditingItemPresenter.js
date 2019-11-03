@@ -13,10 +13,11 @@ export class EditingItemPresenter extends Component {
     required: false,
     readOnly: false,
     editValueInputType: '',
-    isChecked: false
+    isChecked: false,
+    checkText: '',
   }
   componentWillReceiveProps(nextProps) {
-    const { id , idname , value , placeHolder , type , label , classname , description , required , readOnly, editValueInputType ,isChecked } = nextProps.item;
+    const { id , idname , value , placeHolder , type , label , classname , description , required , readOnly, editValueInputType ,isChecked, checkText } = nextProps.item;
     this.setState({
       id,
       value,
@@ -30,6 +31,7 @@ export class EditingItemPresenter extends Component {
       readOnly,
       editValueInputType,
       isChecked,
+      checkText,
     });
   }
   onChangeHandler = (event) => {
@@ -45,7 +47,7 @@ export class EditingItemPresenter extends Component {
     this.props.onChange(idNumber, name, value);
   }
   render() {
-    const { id , type , isChecked , editValueInputType , value , idname , placeHolder , label , classname , description , required , readOnly } = this.state;
+    const { id , type , isChecked , editValueInputType , value , idname , placeHolder , label , classname , description , required , readOnly, checkText } = this.state;
     return (
       <>
         {process.env.NODE_ENV === 'development' && id}
@@ -76,9 +78,20 @@ export class EditingItemPresenter extends Component {
               checked={ isChecked }
               onChange={this.onCheckHandler} /> <span id='isChecked' className='cursor-d'>Checked</span>
           </div>
+          <div className={`edit-item-row-g ${type !== 'checkbox' && 'd-n'}`}>
+            <label className='edit-label'><code>checkbox text:</code></label>
+            <br />
+            <input
+              type='text'
+              value={ checkText }
+              name='checkText'
+              className='edit-input'
+              onChange={this.onChangeHandler} />
+          </div>
           <div className='edit-item-row-g'>
             <label className='edit-label'><code>placeholder:</code></label>
             <br />
+            { console.log(placeHolder) }
             <input
               value={ placeHolder }
               name='placeHolder'

@@ -4,7 +4,7 @@ import ContactItem from './ContactItem';
 import './contactMe.css';
 
 const ContactMe = () => {
-  const [connectionList, setConnectionList] = useState([
+  const connectionList = [
     {
       name: 'twitter',
       faName: 'fab fa-twitter',
@@ -19,7 +19,7 @@ const ContactMe = () => {
       faName: 'fab fa-github',
       link: 'https://github.com/hamid814'
     }
-  ])
+  ]
   const [showEmail, setShowEmail] = useState(false)
 
   const displayEmail = () => {

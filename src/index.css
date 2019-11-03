@@ -180,6 +180,10 @@ button:hover {
   display: none !important;
 }
 
+.d-i-b {
+  display: inline-block !important;
+}
+
 .cursor-d {
   cursor: default;
 }

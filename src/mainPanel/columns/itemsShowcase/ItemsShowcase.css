@@ -123,7 +123,12 @@
   padding: 0.72vh 1.3vh;
   cursor: auto;
   font-size: 1.9vh;
-  width: 70% !important;
+  width: 70%;
+  display: inline-block;
+}
+
+.item-row-input[type="checkbox"] {
+  width: initial;
 }
 
 .item-row-active .item-row-body {

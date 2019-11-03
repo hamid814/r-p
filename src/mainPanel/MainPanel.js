@@ -145,6 +145,7 @@ export class MainPanel extends Component {
         classname: '',
         value: '',
         isChecked: false,
+        checkText: 'text',
         placeHolder: ''
       },
       range: {
@@ -338,6 +339,7 @@ export class MainPanel extends Component {
       value: this.state.fieldTypes[name].value,
       placeHolder: this.state.fieldTypes[name].placeHolder,
       isChecked: this.state.fieldTypes[name].isChecked,
+      checkText: this.state.fieldTypes[name].checkText,
       sofp: this.state.fieldTypes[name].sofp
     };
 
