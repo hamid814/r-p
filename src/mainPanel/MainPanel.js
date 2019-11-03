@@ -314,7 +314,7 @@ export class MainPanel extends Component {
       },
     },
     activeId: '',
-    formStatus: 'edit' // values : edit, setting, preview, code, contact
+    formStatus: 'preview' // values : edit, setting, preview, code, contact
   }
   setFormStatus = (formStatus) => {
     this.setState({

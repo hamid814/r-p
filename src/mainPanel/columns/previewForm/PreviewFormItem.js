@@ -1,26 +1,27 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 
-export class PreviewFormItem extends Component {
-  render() {
-    const { type, value, label, placeHolder, readOnly, required } = this.props.item;
-    return (
-      <div className='preview-form-item'>
-        {
-          label !== ''
-           && <label>{ label } {required && <span className='required-star'>*</span>}</label>
-        }
-        {
-          readOnly
-            ? required
-              ? <input type={type} value={value} placeholder={placeHolder} readOnly required/>
-              : <input type={type} value={value} placeholder={placeHolder} readOnly/>
-            : required
-              ? <input type={type} defaultValue={value} placeholder={placeHolder} required/>
-              : <input type={type} defaultValue={value} placeholder={placeHolder}/>
-        }
-      </div>
+const PreviewFormItem = ({item: { type, value, label, placeHolder, readOnly, required }}) => {
+  useEffect(() => {
+    
+  }, []);
+
+  return (
+    <div className='preview-form-item'>
+      {
+        label !== ''
+          && <label>{ label } {required && <span className='required-star'>*</span>}</label>
+      }
+      {
+        readOnly
+          ? required
+            ? <input type={type} value={value} placeholder={placeHolder} readOnly required/>
+            : <input type={type} value={value} placeholder={placeHolder} readOnly/>
+          : required
+            ? <input type={type} defaultValue={value} placeholder={placeHolder} required/>
+            : <input type={type} defaultValue={value} placeholder={placeHolder}/>
+      }
+    </div>
     )
-  }
 }
 
 export default PreviewFormItem
