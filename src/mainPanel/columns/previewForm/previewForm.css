@@ -24,6 +24,12 @@
   padding: 0.9vh 1.1vh;
 }
 
+#preview-form input[type="reset"] {
+  margin-top: 1.7vh;
+  margin-right: 2.7vh;
+  padding: 0.9vh 1.1vh;
+}
+
 .preview-form-item {
   margin-top: 1vh; 
 }
