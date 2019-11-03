@@ -41,7 +41,10 @@ export class EditingItemPresenter extends Component {
     this.props.onChange(idNumber, name, value);
   }
   render() {
-    const { id , value , idname , placeHolder , label , classname , description , required , readOnly } = this.state;
+    const { id , type , value , idname , placeHolder , label , classname , description , required , readOnly } = this.state;
+
+    console.log('add input type for type of input ( text for button color for color )')
+
     return (
       <>
         {process.env.NODE_ENV === 'development' && id}
@@ -58,6 +61,7 @@ export class EditingItemPresenter extends Component {
             <label className='edit-label'><code>value:</code></label>
             <br />
             <input
+              type={ type }
               value={ value }
               name='value'
               className='edit-input'

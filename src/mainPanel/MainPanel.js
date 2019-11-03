@@ -207,10 +207,24 @@ export class MainPanel extends Component {
         classname: '',
         value: '',
         placeHolder: ''
-      }
+      },
+      email: {
+        name: 'email input',
+        type: 'email',
+        label: 'Email',
+        idname: '',
+        required: false,
+        readOnly: false,
+        hasMaxChar: false,
+        maxChar: '',
+        description: '',
+        classname: '',
+        value: '',
+        placeHolder: 'enter your email'
+      },
     },
     activeId: '',
-    formStatus: 'setting'
+    formStatus: 'edit'
   }
   setFormStatus = (formStatus) => {
     this.setState({

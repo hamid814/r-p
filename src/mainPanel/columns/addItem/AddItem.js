@@ -32,9 +32,9 @@ export class AddItem extends Component {
             Add Item
           </h2>
           <div className='column-body'>
-            <div className='add-item-group closed'>
+            {/* <div className='add-item-group closed'> */}
               <div className='add-item-group-header' onClick={this.headerClickHandler}>
-                primary fields
+                Fields
               </div>
               <div className='add-item-group-body'>
                 <button
@@ -91,10 +91,16 @@ export class AddItem extends Component {
                   name='number'>
                   number
                 </button>
+                <button
+                  className='add-item-group-btn'
+                  onClick={this.onClickHandler}
+                  name='email'>
+                  email
+                </button>
               </div>
-            </div>
-            <div className='add-item-group closed'>
-              <div className='add-item-group-header' onClick={this.headerClickHandler}>
+            {/* </div> */}
+            {/* <div className='add-item-group closed'> */}
+              {/* <div className='add-item-group-header' onClick={this.headerClickHandler}>
                 advanced fileds
               </div>
               <div className='add-item-group-body'>
@@ -110,10 +116,10 @@ export class AddItem extends Component {
                 <button className='add-item-group-btn'>
                   item 4
                 </button>
-              </div>
-            </div>
-            <div className='add-item-group closed'>
-              <div className='add-item-group-header' onClick={this.headerClickHandler}>
+              </div> */}
+            {/* </div> */}
+            {/* <div className='add-item-group closed'> */}
+              {/* <div className='add-item-group-header' onClick={this.headerClickHandler}>
                 premaid fileds
               </div>
               <div className='add-item-group-body'>
@@ -129,8 +135,8 @@ export class AddItem extends Component {
                 <button className='add-item-group-btn'>
                   item 4
                 </button>
-              </div>
-            </div>
+              </div> */}
+            {/* </div> */}
           </div>
         </div>
       </React.Fragment>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import EditingItemPresenter from './EditingItemPresenter';
 import NoItemSelected from './NoItemSelected';
-import EditAsCode from './EditAsCode';
 import EditReset from './EditReset';
 import EditEnd from './EditEnd';
 
@@ -47,10 +46,6 @@ export class EditItem extends Component {
               <div id='edit-reset'>
                 <EditReset
                   onClick={this.resetHandler} />
-              </div>
-              <div id='edit-as-code'>
-                <EditAsCode
-                  item={this.state.item} />
               </div>
             </div>
           </div>
