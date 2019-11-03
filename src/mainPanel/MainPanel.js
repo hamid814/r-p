@@ -78,6 +78,7 @@ export class MainPanel extends Component {
     fieldTypes : {
       text : {
         name: '',
+        fieldName: 'text input',
         type: 'text',
         editValueInputType: 'text',
         label: 'untitled',
@@ -93,6 +94,7 @@ export class MainPanel extends Component {
       },
       password: {
         name: '',
+        fieldName: 'password input',
         type: 'password',
         editValueInputType: 'text',
         label: 'untitled',
@@ -108,6 +110,7 @@ export class MainPanel extends Component {
       },
       button: {
         name: '',
+        fieldName: 'button',
         type: 'button',
         editValueInputType: 'text',
         label: 'untitled',
@@ -123,6 +126,7 @@ export class MainPanel extends Component {
       },
       hidden: {
         name: '',
+        fieldName: 'hidden input',
         type: 'hidden',
         editValueInputType: 'text',
         label: 'untitled',
@@ -135,6 +139,7 @@ export class MainPanel extends Component {
       },
       checkbox: {
         name: '',
+        fieldName: 'checkbox',
         type: 'checkbox',
         editValueInputType: 'checkbox',
         label: 'untitled',
@@ -149,6 +154,7 @@ export class MainPanel extends Component {
       },
       range: {
         name: '',
+        fieldName: 'range',
         type: 'range',
         editValueInputType: 'number',
         label: 'untitled',
@@ -168,21 +174,21 @@ export class MainPanel extends Component {
       },
       color: {
         name: '',
+        fieldName: 'color input',
         type: 'color',
         editValueInputType: 'color',
         label: 'untitled',
         idname: '',
         required: false,
         readOnly: false,
-        hasMaxChar: false,
-        maxChar: '',
         description: '',
         classname: '',
-        value: '#ffffff',
+        value: '',
         placeHolder: ''
       },
       date: {
         name: '',
+        fieldName: 'date input',
         type: 'date',
         editValueInputType: 'date',
         label: 'untitled',
@@ -198,14 +204,13 @@ export class MainPanel extends Component {
       },
       number: {
         name: '',
+        fieldName: 'number input',
         type: 'number',
         editValueInputType: 'number',
         label: 'untitled',
         idname: '',
         required: false,
         readOnly: false,
-        hasMaxChar: false,
-        maxChar: '',
         description: '',
         classname: '',
         value: '',
@@ -213,6 +218,7 @@ export class MainPanel extends Component {
       },
       email: {
         name: '',
+        fieldName: 'email input',
         type: 'email',
         editValueInputType: 'email',
         label: 'Email',
@@ -228,7 +234,7 @@ export class MainPanel extends Component {
       },
       file : {
         name: '',
-        fieldName: 'myFile',
+        fieldName: 'file input',
         type: 'file',
         editValueInputType: 'none',
         label: 'untitled',
@@ -243,7 +249,7 @@ export class MainPanel extends Component {
       },
       week : {
         name: '',
-        fieldName: '',
+        fieldName: 'week input',
         type: 'week',
         editValueInputType: 'week',
         label: 'untitled',
@@ -258,7 +264,7 @@ export class MainPanel extends Component {
       },
       month : {
         name: '',
-        fieldName: '',
+        fieldName: 'month input',
         editValueInputType: 'month',
         type: 'month',
         label: 'untitled',
@@ -272,7 +278,7 @@ export class MainPanel extends Component {
       },
       radio : {
         name: '',
-        fieldName: '',
+        fieldName: 'radio input',
         type: 'radio',
         editValueInputType: 'radio',
         label: 'untitled',
@@ -285,7 +291,7 @@ export class MainPanel extends Component {
       },
       time : {
         name: '',
-        fieldName: '',
+        fieldName: 'time input',
         type: 'time',
         editValueInputType: 'time',
         label: 'untitled',
@@ -299,7 +305,7 @@ export class MainPanel extends Component {
       },
       url : {
         name: '',
-        fieldName: '',
+        fieldName: 'url input',
         type: 'url',
         editValueInputType: 'url',
         label: 'untitled',
@@ -325,6 +331,7 @@ export class MainPanel extends Component {
     const newItem = {
       id: uuid.v4(),
       name: this.state.fieldTypes[name].name,
+      fieldName: this.state.fieldTypes[name].fieldName,
       type: this.state.fieldTypes[name].type,
       label: this.state.fieldTypes[name].label,
       editValueInputType: this.state.fieldTypes[name].editValueInputType,

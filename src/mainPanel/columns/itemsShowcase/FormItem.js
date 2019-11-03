@@ -35,12 +35,12 @@ export class FormItem extends Component {
     e.preventDefault()
   }
   render() {
-    const { name , type , label , placeHolder , value , description , required, title, isChecked, checkText } = this.props.item;
+    const { fieldName ,name , type , label , placeHolder , value , description , required, title, isChecked, checkText } = this.props.item;
     return (
       <div className={this.props.item.id === this.props.activeIdNumber ? 'item-row item-row-active' : 'item-row'}>
         <div className='item-row-header'>
           <div className='item-row-header-name'>
-            <h4>::: {name}</h4>
+            <h4>::: {fieldName}</h4>
           </div>
           <div className='item-row-header-btn-panel'>
             <div className='item-row-header-btn' name='edit' onClick={this.resetClickHandler}>

@@ -30,6 +30,11 @@
   padding: 0.9vh 1.1vh;
 }
 
+#preview-form input[type="checkbox"] {
+  margin-right: 1vw;
+  margin-top: 1vh;
+}
+
 .preview-form-item {
   margin-top: 1vh; 
 }
