@@ -77,8 +77,9 @@ export class MainPanel extends Component {
     },
     fieldTypes : {
       text : {
-        name: 'text input',
+        name: '',
         type: 'text',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -91,8 +92,9 @@ export class MainPanel extends Component {
         placeHolder: ''
       },
       password: {
-        name: 'name of btn',
-        type: 'text',
+        name: '',
+        type: 'password',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -102,11 +104,12 @@ export class MainPanel extends Component {
         description: '',
         classname: '',
         value: '',
-        placeHolder: ''
+        placeHolder: 'Enter your password'
       },
       button: {
-        name: 'button',
+        name: '',
         type: 'button',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -119,28 +122,25 @@ export class MainPanel extends Component {
         placeHolder: ''
       },
       hidden: {
-        name: 'hidden field',
+        name: '',
         type: 'hidden',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
         readOnly: false,
-        hasMaxChar: false,
-        maxChar: '',
         description: '',
         classname: '',
         value: '',
-        placeHolder: ''
       },
       checkbox: {
         name: 'checkbox',
         type: 'checkbox',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
         readOnly: false,
-        hasMaxChar: false,
-        maxChar: '',
         description: '',
         classname: '',
         value: '',
@@ -150,12 +150,11 @@ export class MainPanel extends Component {
       range: {
         name: 'range field',
         type: 'range',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
         readOnly: false,
-        hasMaxChar: false,
-        maxChar: '',
         hasMin: false,
         min: '',
         hasmax: false,
@@ -170,6 +169,7 @@ export class MainPanel extends Component {
       color: {
         name: 'color field',
         type: 'color',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -184,6 +184,7 @@ export class MainPanel extends Component {
       date: {
         name: 'date field',
         type: 'date',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -198,6 +199,7 @@ export class MainPanel extends Component {
       number: {
         name: 'number field',
         type: 'number',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -212,6 +214,7 @@ export class MainPanel extends Component {
       email: {
         name: 'email input',
         type: 'email',
+        editValueInputType: '',
         label: 'Email',
         idname: '',
         required: false,
@@ -227,6 +230,7 @@ export class MainPanel extends Component {
         name: '',
         fieldName: 'myFile',
         type: 'file',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -241,6 +245,7 @@ export class MainPanel extends Component {
         name: '',
         fieldName: '',
         type: 'week',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -254,6 +259,7 @@ export class MainPanel extends Component {
       month : {
         name: '',
         fieldName: '',
+        editValueInputType: '',
         type: 'month',
         label: 'untitled',
         idname: '',
@@ -268,6 +274,7 @@ export class MainPanel extends Component {
         name: '',
         fieldName: '',
         type: 'radio',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -280,6 +287,7 @@ export class MainPanel extends Component {
         name: '',
         fieldName: '',
         type: 'time',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
@@ -293,6 +301,7 @@ export class MainPanel extends Component {
         name: '',
         fieldName: '',
         type: 'url',
+        editValueInputType: '',
         label: 'untitled',
         idname: '',
         required: false,
