@@ -4,21 +4,25 @@ import './addItem.css'
 
 export class AddItem extends Component {
   state = {
-    btns : 'email, month, file, time, url, search, radio, tel'
-  }
-  headerClickHandler = (event) => {
-    const groups = document.querySelectorAll('.add-item-group');
-    if(event.target.parentElement.classList.contains('opened')) {
-      event.target.parentElement.classList.remove('opened');
-      event.target.parentElement.classList.add('closed');
-    } else if(event.target.parentElement.classList.contains('closed')) {
-      for(let group of groups) {
-        group.classList.remove('opened');
-        group.classList.add('closed');
-      }
-      event.target.parentElement.classList.add('opened');
-      event.target.parentElement.classList.remove('closed');
-    }
+    btns : [
+      'text',
+      'password',
+      'button',
+      'hidden',
+      'checkbox',
+      'range',
+      'color',
+      'date',
+      'number',
+      'email',
+      'file',
+      'week',
+      'month',
+      'radio',
+      'time',
+      'url'
+
+    ]
   }
   onClickHandler = (event) => {
     const name = event.target.name;
@@ -26,16 +30,26 @@ export class AddItem extends Component {
   }
   render() {
     return (
-      <React.Fragment>
+      <>
         <div id='add-item'>
           <h2 className='column-header'>
             Add Item
           </h2>
           <div className='column-body'>
-            <div className='add-item-group-header' onClick={this.headerClickHandler}>
+            <div className='add-item-group-header'>
               Fields
             </div>
             <div className='add-item-group-body'>
+              {
+                this.state.btns.map(btn => (
+                  <button
+                    className='add-item-group-btn'
+                    onClick={this.onClickHandler}
+                    name={btn}>
+                    {btn}
+                  </button>
+                ))
+              }
               <button
                 className='add-item-group-btn'
                 onClick={this.onClickHandler}
@@ -135,7 +149,7 @@ export class AddItem extends Component {
             </div>
           </div>
         </div>
-      </React.Fragment>
+      </>
     )
   }
 }
