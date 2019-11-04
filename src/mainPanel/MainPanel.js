@@ -88,6 +88,7 @@ export class MainPanel extends Component {
         maxChar: '',
         description: '',
         classname: '',
+        title: '',
         value: '',
         placeHolder: ''
       },
@@ -105,6 +106,7 @@ export class MainPanel extends Component {
         maxChar: '',
         description: '',
         classname: '',
+        title: '',
         value: '',
         placeHolder: 'Enter your password'
       },
@@ -122,7 +124,8 @@ export class MainPanel extends Component {
         maxChar: '',
         description: '',
         classname: '',
-        value: 'new button',
+        title: '',
+        value: 'button',
         placeHolder: ''
       },
       hidden: {
@@ -137,6 +140,7 @@ export class MainPanel extends Component {
         readOnly: false,
         description: '',
         classname: '',
+        title: '',
         value: '',
       },
       checkbox: {
@@ -151,6 +155,7 @@ export class MainPanel extends Component {
         readOnly: false,
         description: '',
         classname: '',
+        title: '',
         value: '',
         isChecked: false,
         checkText: 'text',
@@ -173,6 +178,7 @@ export class MainPanel extends Component {
         step: '',
         description: '',
         classname: '',
+        title: '',
         value: '',
         placeHolder: ''
       },
@@ -188,6 +194,7 @@ export class MainPanel extends Component {
         readOnly: false,
         description: '',
         classname: '',
+        title: '',
         value: '',
         placeHolder: ''
       },
@@ -207,6 +214,7 @@ export class MainPanel extends Component {
         hasMin: false,
         min: '',
         classname: '',
+        title: '',
         value: '',
         placeHolder: ''
       },
@@ -222,6 +230,7 @@ export class MainPanel extends Component {
         readOnly: false,
         description: '',
         classname: '',
+        title: '',
         value: '',
         placeHolder: ''
       },
@@ -239,6 +248,7 @@ export class MainPanel extends Component {
         maxChar: '',
         description: '',
         classname: '',
+        title: '',
         value: '',
         placeHolder: 'enter your email'
       },
@@ -316,7 +326,7 @@ export class MainPanel extends Component {
         description: 'description',
         classname: '',
         value: '',
-        title: 'title',
+        title: '',
       },
       url : {
         name: '',
@@ -363,6 +373,7 @@ export class MainPanel extends Component {
       placeHolder: this.state.fieldTypes[name].placeHolder,
       isChecked: this.state.fieldTypes[name].isChecked,
       checkText: this.state.fieldTypes[name].checkText,
+      title: this.state.fieldTypes[name].title,
       sofp: this.state.fieldTypes[name].sofp
     };
 
@@ -372,6 +383,8 @@ export class MainPanel extends Component {
     //       // do stuff
     //   }
     // }
+
+    console.log(newItem.type)
 
     this.setState({
       formItems: [...this.state.formItems, newItem]

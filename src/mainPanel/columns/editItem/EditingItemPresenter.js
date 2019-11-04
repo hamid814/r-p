@@ -16,9 +16,13 @@ export class EditingItemPresenter extends Component {
     editValueInputType: '',
     isChecked: false,
     checkText: '',
+    title: '',
+  }
+  componentWillMount() {
+    console.log(this.props)
   }
   componentWillReceiveProps(nextProps) {
-    const { id , idname , value , placeHolder , type , label, labelFor , classname , description , required , readOnly, editValueInputType ,isChecked, checkText } = nextProps.item;
+    const { id , idname , value , placeHolder , type , label, labelFor , classname , description , required , readOnly, editValueInputType ,isChecked, checkText, title } = nextProps.item;
     this.setState({
       id,
       value,
@@ -34,6 +38,7 @@ export class EditingItemPresenter extends Component {
       editValueInputType,
       isChecked,
       checkText,
+      title,
     });
   }
   onChangeHandler = (event) => {
@@ -49,10 +54,9 @@ export class EditingItemPresenter extends Component {
     this.props.onChange(idNumber, name, value);
   }
   render() {
-    const { id , type , isChecked , editValueInputType , value , idname , placeHolder , label , labelFor , classname , description , required , readOnly, checkText } = this.state;
+    const { id , type , isChecked , editValueInputType , value , idname , placeHolder , label , labelFor , classname , description , required , readOnly, checkText, title } = this.state;
     return (
       <>
-        {process.env.NODE_ENV === 'development' && id}
         <div className='edit-item-row-g'>
           <label className='edit-label'><code>label:</code></label>
           <br />
@@ -60,6 +64,16 @@ export class EditingItemPresenter extends Component {
             type='text'
             value={ label }
             name='label'
+            className='edit-input'
+            onChange={this.onChangeHandler} />
+        </div>
+        <div className='edit-item-row-g'>
+          <label className='edit-label'><code>label for:</code></label>
+          <br />
+          <input
+            type='text'
+            value={ labelFor }
+            name='labelFor'
             className='edit-input'
             onChange={this.onChangeHandler} />
         </div>
@@ -115,6 +129,15 @@ export class EditingItemPresenter extends Component {
           <input
             value={ classname }
             name='classname'
+            className='edit-input'
+            onChange={this.onChangeHandler} />
+        </div>
+        <div className='edit-item-row-g'>
+          <label className='edit-label'><code>title:</code></label>
+          <br />
+          <input
+            value={ title }
+            name='title'
             className='edit-input'
             onChange={this.onChangeHandler} />
         </div>
