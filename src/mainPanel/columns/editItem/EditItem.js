@@ -26,7 +26,7 @@ export class EditItem extends Component {
     }
   }
   render() {
-    if(this.props.id !== '') {
+    if(this.props.id !== '' && this.props.id !== null && this.props.id !== undefined) {
       return (
         <>
           <div id='edit-item'>
@@ -36,7 +36,7 @@ export class EditItem extends Component {
             <div className='column-body' id='edit-item-body'>
               <div id='edit-item-presenter'>
                 <EditingItemPresenter
-                  item={this.state.item}
+                  item={this.props.items.filter(i => i.id === this.props.id)[0]}
                   onChange={this.props.onChange} />
               </div>
               <div id='edit-end'>

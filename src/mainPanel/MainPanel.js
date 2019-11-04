@@ -384,8 +384,6 @@ export class MainPanel extends Component {
     //   }
     // }
 
-    console.log(newItem.type)
-
     this.setState({
       formItems: [...this.state.formItems, newItem]
     });
