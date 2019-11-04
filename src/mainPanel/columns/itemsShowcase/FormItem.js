@@ -35,7 +35,7 @@ export class FormItem extends Component {
     e.preventDefault()
   }
   render() {
-    const { fieldName ,name , type , label , placeHolder , value , description , required, title, isChecked, checkText } = this.props.item;
+    const { fieldName , type , label , placeHolder , value , description , required, title, isChecked, checkText } = this.props.item;
     return (
       <div className={this.props.item.id === this.props.activeIdNumber ? 'item-row item-row-active' : 'item-row'}>
         <div className='item-row-header'>
