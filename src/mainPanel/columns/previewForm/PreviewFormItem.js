@@ -53,11 +53,11 @@ const PreviewFormItem = ({item: { description, title, hasMaxChar, maxChar, hasMa
       theItem.setAttribute('step', step)
     }
 
-    if(required !== '') {
+    if(required) {
       theItem.setAttribute('required', '')
     }
 
-    if(readOnly !== '') {
+    if(readOnly) {
       theItem.setAttribute('readonly', '')
     }
 

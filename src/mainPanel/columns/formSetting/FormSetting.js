@@ -40,7 +40,7 @@ export class FormSetting extends Component {
             </div>
             <div className='setting-item'>
               <label>Action</label>
-              <input type='text' name='action' value={action} onChange={this.changeHandler}/>
+              <input type='text' name='action' value={action} placeholder='enter form action' onChange={this.changeHandler}/>
             </div>
             <div className='setting-item'>
               <label>Description</label>
