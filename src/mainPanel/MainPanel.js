@@ -174,7 +174,7 @@ export class MainPanel extends Component {
         readOnly: false,
         hasMin: false,
         min: '',
-        hasmax: false,
+        hasMax: false,
         max: '',
         hasStep: false,
         step: '',
@@ -182,7 +182,6 @@ export class MainPanel extends Component {
         classname: '',
         title: '',
         value: '',
-        placeHolder: ''
       },
       color: {
         name: '',
@@ -374,6 +373,12 @@ export class MainPanel extends Component {
       readOnly: this.state.fieldTypes[name].readOnly,
       hasMaxChar: this.state.fieldTypes[name].hasMaxChar,
       maxChar: this.state.fieldTypes[name].maxChar,
+      hasMax: this.state.fieldTypes[name].hasMax,
+      max: this.state.fieldTypes[name].max,
+      hasMin: this.state.fieldTypes[name].hasMin,
+      min: this.state.fieldTypes[name].min,
+      hasStep: this.state.fieldTypes[name].hasStep,
+      step: this.state.fieldTypes[name].step,
       description: this.state.fieldTypes[name].description,
       classname: this.state.fieldTypes[name].classname,
       value: this.state.fieldTypes[name].value,
@@ -381,7 +386,6 @@ export class MainPanel extends Component {
       isChecked: this.state.fieldTypes[name].isChecked,
       checkText: this.state.fieldTypes[name].checkText,
       title: this.state.fieldTypes[name].title,
-      sofp: this.state.fieldTypes[name].sofp
     };
 
     // FOR LOPING THROIGH AN OBJECT
@@ -422,18 +426,8 @@ export class MainPanel extends Component {
   }
   cloneHandler = (passedItem) => {
     const newItem = {
-      id: uuid.v4(),
-      name: passedItem.name,
-      type: passedItem.type,
-      label: passedItem.label,
-      required: passedItem.required,
-      readOnly: passedItem.readOnly,
-      hasMaxChar: passedItem.hasMaxChar,
-      maxChar: passedItem.maxChar,
-      description: passedItem.description,
-      classname: passedItem.classname,
-      value: passedItem.value,
-      placeHolder: passedItem.placeHolder
+      ...passedItem,
+      id: uuid.v4()
     };
     this.setState({
       formItems: [...this.state.formItems, newItem]
