@@ -6,6 +6,7 @@
 
 .set-btn-panel {
   width: 100%;
+  margin: 0 auto;
 }
 
 .set-btn-panel div {
@@ -31,7 +32,7 @@
 }
 
 .edit-set {
-  max-height: 60vh;
+  max-height: 57vh;
   overflow-y: auto;
 }
 

@@ -132,6 +132,7 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
         <div ref={codeContainer} className='d-n'>
           {/* form is created in this div and then the textarea value = this.innerHTML */}
         </div>
+        <input type="checkbox" checked/>
       </div>
     </>
   )

@@ -152,7 +152,7 @@ export class MainPanel extends Component {
         type: 'checkbox',
         editValueInputType: 'checkbox',
         label: 'untitled',
-        labelFor: 'chick',
+        labelFor: '',
         idname: '',
         required: false,
         readOnly: false,
