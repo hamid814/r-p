@@ -195,9 +195,11 @@ export class MainPanel extends Component {
         idname: '',
         required: false,
         readOnly: false,
-        hasMaxChar: false,
-        maxChar: '',
         description: '',
+        hasMax: false,
+        Max: '',
+        hasMin: false,
+        min: '',
         classname: '',
         value: '',
         placeHolder: ''
@@ -320,7 +322,7 @@ export class MainPanel extends Component {
       },
     },
     activeId: '',
-    formStatus: 'preview' // values : edit, setting, preview, code, contact
+    formStatus: 'edit' // values : edit, setting, preview, code, contact
   }
   setFormStatus = (formStatus) => {
     this.setState({
