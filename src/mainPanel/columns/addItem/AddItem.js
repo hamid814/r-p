@@ -4,30 +4,22 @@ import './addItem.css'
 
 export class AddItem extends Component {
   state = {
-    btns : [
-      'text',
-      'password',
-      'button',
-      'hidden',
-      'checkbox',
-      'range',
-      'color',
-      'date',
-      'number',
-      'email',
-      'file',
-      'week',
-      'month',
-      'radio',
-      'time',
-      'url'
-
-    ]
+    btns : []
   }
   onClickHandler = (event) => {
     const name = event.target.name;
     this.props.onClick(name);
   }
+  componentWillMount() {
+    let theList = []
+    for(let item in this.props.items) {
+      theList.push(item)
+    }
+    this.setState({
+      btns: theList
+    })
+  }
+  
   render() {
     return (
       <>

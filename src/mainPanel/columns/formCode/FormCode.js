@@ -57,7 +57,14 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
     const itemLabel = document.createElement('label');
     itemLabel.innerText = item.label;
 
-    itemContainer.appendChild(itemLabel);
+    // add for attr to label if it has
+    if(item.labelFor && item.labelFor !== '') {
+      itemLabel.setAttribute('for', item.labelFor);
+    }
+
+    if(item.label !== '' || item.labelFor !== '') {
+      itemContainer.appendChild(itemLabel);
+    }
 
     const itemCode = document.createElement('input');
     itemCode.type = item.type
@@ -66,7 +73,7 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
       itemCode.setAttribute('value', item.value)
     }
     
-    if(item.placeHolder !== '') {
+    if(item.placeHolder && item.placeHolder !== '') {
       itemCode.setAttribute('placeholder', item.placeHolder)
     }
 

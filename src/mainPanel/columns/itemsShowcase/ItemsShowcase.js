@@ -10,13 +10,13 @@ export class ItemsShowcase extends Component {
     if(this.props.items.length !== 0) {
       return (
         <React.Fragment>
-          <div id="items-showcase">
-            <h2 className="column-header">
+          <div id='items-showcase'>
+            <h2 className='column-header'>
               Items Showcase
                 <ClearForm
                   onClick={this.props.onClear} />
             </h2>
-            <div className="column-body">
+            <div className='column-body'>
               {
                 this.props.items.map((item) => (
                   <FormItem
@@ -33,11 +33,11 @@ export class ItemsShowcase extends Component {
     } else if(this.props.items.length === 0) {
       return (
         <React.Fragment>
-          <div id="items-showcase">
-            <h2 className="column-header">
+          <div id='items-showcase'>
+            <h2 className='column-header'>
               Items Showcase
             </h2>
-            <div className="column-body">
+            <div className='column-body'>
               <FormIsEmpty />
               
             </div>

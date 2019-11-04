@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-const PreviewFormItem = ({item: { type, value, label, placeHolder, readOnly, required, checkText }, item}) => {
+const PreviewFormItem = ({item: { type, value, label, placeHolder, readOnly, required, isChecked, checkText }, item}) => {
   const itemDiv = useRef(null)
 
   useEffect(() => {
@@ -42,16 +42,20 @@ const PreviewFormItem = ({item: { type, value, label, placeHolder, readOnly, req
       theItem.setAttribute('readonly', '')
     }
 
-    itemDiv.current.appendChild(theItem);
-
-    // add text after checkboxes
+    // add text after checkboxes and check it
     if(type === 'checkbox') {
       const textAfterCheckBox = document.createElement('span')
 
       textAfterCheckBox.innerText = checkText
 
       itemDiv.current.appendChild(textAfterCheckBox);
+
+      if(isChecked) {
+        theItem.setAttribute('checked', '')
+      }
     }
+
+    itemDiv.current.appendChild(theItem);
 
     // eslint-disable-next-line
   }, [type, value, label, placeHolder, readOnly, required, checkText]);

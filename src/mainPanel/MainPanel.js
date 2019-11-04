@@ -149,7 +149,7 @@ export class MainPanel extends Component {
         type: 'checkbox',
         editValueInputType: 'checkbox',
         label: 'untitled',
-        labelFor: '',
+        labelFor: 'chick',
         idname: '',
         required: false,
         readOnly: false,
@@ -158,7 +158,7 @@ export class MainPanel extends Component {
         title: '',
         value: '',
         isChecked: false,
-        checkText: 'text',
+        checkText: 'text to check',
       },
       range: {
         name: '',
@@ -228,6 +228,12 @@ export class MainPanel extends Component {
         idname: '',
         required: false,
         readOnly: false,
+        hasMax: false,
+        max: '',
+        hasMin: false,
+        min: '',
+        hasStep: false,
+        step: '',
         description: '',
         classname: '',
         title: '',
@@ -464,7 +470,7 @@ export class MainPanel extends Component {
   }
   componentWillMount() {
     this.setState({
-      activeId : this.state.formItems[0].id
+      // activeId : this.state.formItems[0].id
     });
   }
 
@@ -489,7 +495,8 @@ export class MainPanel extends Component {
         <div id='main-panel' className={`${this.state.formStatus === 'edit' ? 'grid-4-cul' : this.state.formStatus === 'contact' ? 'grid-1-cul' : 'grid-2-cul'}`} onClick={this.onClickHandler}>
           <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <AddItem
-              onClick={this.onAdd} />
+              onClick={this.onAdd}
+              items={this.state.fieldTypes} />
           </div>
           <div className={`column ${this.state.formStatus !== 'edit' && 'd-n'}`}>
             <ItemsShowcase
