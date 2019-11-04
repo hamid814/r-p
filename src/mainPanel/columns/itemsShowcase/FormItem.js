@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 
 export class FormItem extends Component {
-  resetClickHandler = () => {
-    const id = this.props.item.id;
-    const item = this.props.item;
-    const action = 'reset';
-    this.props.onClick(id, action, item);
-  }
   editClikHandler = () => {
     const id = this.props.item.id;
     const item = this.props.item;
@@ -43,12 +37,6 @@ export class FormItem extends Component {
             <h4>::: {fieldName}</h4>
           </div>
           <div className='item-row-header-btn-panel'>
-            <div className='item-row-header-btn' name='edit' onClick={this.resetClickHandler}>
-              r
-              <div className='item-row-header-btn-desc'>
-                Reset
-              </div>
-            </div>
             <div className='item-row-header-btn' name='edit' onClick={this.editClikHandler}>
               e
               <div className='item-row-header-btn-desc'>

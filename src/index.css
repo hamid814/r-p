@@ -180,6 +180,11 @@ button:hover {
   display: none !important;
 }
 
+/* show = none */
+.s-n {
+  opacity: 0;
+}
+
 .d-i-b {
   display: inline-block !important;
 }

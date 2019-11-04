@@ -35,6 +35,7 @@ export class MainPanel extends Component {
       {
         id: uuid.v4(),
         name: 'new name',
+        fieldName: 'second btn of list',
         type: 'text',
         label: 'new title',
         idname: 'some-id',
@@ -51,6 +52,7 @@ export class MainPanel extends Component {
       {
         id: uuid.v4(),
         name: 'nme of btn',
+        fieldName: 'no name',
         type: 'password',
         label: 'another title',
         idname: 'id-here',
@@ -61,7 +63,8 @@ export class MainPanel extends Component {
         description: 'and there it goes',
         classname: 'dadadada',
         value: 'this is a value',
-        placeHolder: ''
+        placeHolder: '',
+        title: 'nn'
       }
     ],
     formInfo: {
@@ -156,7 +159,6 @@ export class MainPanel extends Component {
         description: '',
         classname: '',
         title: '',
-        value: '',
         isChecked: false,
         checkText: 'text to check',
       },
@@ -196,7 +198,6 @@ export class MainPanel extends Component {
         classname: '',
         title: '',
         value: '',
-        placeHolder: ''
       },
       date: {
         name: '',
@@ -470,7 +471,7 @@ export class MainPanel extends Component {
   }
   componentWillMount() {
     this.setState({
-      // activeId : this.state.formItems[0].id
+      activeId : this.state.formItems[0].id
     });
   }
 
