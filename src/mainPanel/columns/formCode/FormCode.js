@@ -34,7 +34,7 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
 
     const formSubmit = document.createElement('input');
     formSubmit.type = 'submit'
-    submitText === ''
+    submitText.length === 0
       ? formSubmit.value = 'submit'
       : formSubmit.value = submitText
     theForm.appendChild(formSubmit);
@@ -69,7 +69,7 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
     const itemCode = document.createElement('input');
     itemCode.type = item.type
 
-    if(item.value !== '') {
+    if(item.value && item.value !== '') {
       itemCode.setAttribute('value', item.value)
     }
     
@@ -97,7 +97,36 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
       itemCode.setAttribute('readonly', '')
     }
 
+    if(item.title !== '') {
+      itemCode.setAttribute('title', item.title)
+    }
+
+    if(item.isChecked) {
+      item.setSttribute('checked', '')
+    }
+
+    if(item.hasMax) {
+      item.setSttribute('max', item.max)
+    }
+
+    if(item.hasMin) {
+      item.setSttribute('min', item.min)
+    }
+
+    if(item.hasStep) {
+      item.setSttribute('step', item.step)
+    }
+
+    console.log('add max char')
+
     itemContainer.appendChild(itemCode);
+
+    if(item.checkText && item.checkText !== '') {
+      const itemCheckText = document.createElement('span')
+      itemCheckText.innerText = item.checkText
+      
+      itemContainer.appendChild(itemCheckText)
+    }
 
     const itemDesc = document.createElement('div');
     itemDesc.innerText = item.description;
@@ -132,7 +161,6 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
         <div ref={codeContainer} className='d-n'>
           {/* form is created in this div and then the textarea value = this.innerHTML */}
         </div>
-        <input type="checkbox" checked/>
       </div>
     </>
   )

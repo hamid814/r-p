@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const EditingItemPresenter = ({item: { id , name, idname , value , placeHolder , type , label, labelFor , classname , description , required , readOnly, editValueInputType ,isChecked, checkText, title, hasMaxChar, maxChar, hasMax, max, hasMin, min, hasStep, step }, item, onChange}) => {
 
-  const [activeSet, setActiveSet] = useState('special')
+  const [activeSet, setActiveSet] = useState('common')
 
   const onChangeHandler = (event) => {
     const name = event.target.name;

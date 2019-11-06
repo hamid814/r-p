@@ -46,11 +46,23 @@
 
 .preview-form-item input[type="text"],
 .preview-form-item input[type="password"],
-.preview-form-item input[type="number"],
-.preview-form-item input[type="date"] {
+.preview-form-item input[type="number"] {
   width: 100%;
   padding: 0.45rem;
   border: 1px solid #ccc;
+}
+
+.preview-form-item input[type="month"],
+.preview-form-item input[type="time"],
+.preview-form-item input[type="week"],
+.preview-form-item input[type="date"] {
+  border: 1px solid #ccc;
+  width: 55%;
+  padding: 0.35rem;
+}
+
+.preview-form-item input[type="button"] {
+  padding: 0.5vh 0.5vw;
 }
 
 .preview-form-item input[type="button"] {
