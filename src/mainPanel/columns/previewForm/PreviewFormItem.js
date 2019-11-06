@@ -39,7 +39,9 @@ const PreviewFormItem = ({item: { description, title, hasMaxChar, maxChar, hasMa
       theItem.setAttribute('title', title)
     }
 
-    console.log('add hasMasChar and maxChar with proper syntax');
+    if(hasMaxChar !== '') {
+      theItem.setAttribute('maxlength', maxChar)
+    }
 
     if(hasMax) {
       theItem.setAttribute('max', max)

@@ -175,23 +175,6 @@ const EditingItemPresenter = ({item: { id , name, idname , value , placeHolder ,
               className='edit-input'
               onChange={onChangeHandler} />
           </div>
-          <div className={`edit-item-row-g ${hasMax === undefined && 'd-n'}`} id='hasMax' onClick={onCheckHandler}>
-            <input
-              type='checkbox'
-              id='hasMax'
-              checked={ hasMax }
-              onChange={onCheckHandler} /> <span id='hasMax' className='cursor-d'>has maximum</span>
-          </div>
-          <div className={`edit-item-row-g ${max === undefined && 'd-n'} ${!hasMax && 'd-n'}`}>
-            <label className='edit-label'><code>maximum:</code></label>
-            <br />
-            <input
-              value={ max }
-              type='number'
-              name='max'
-              className='edit-input'
-              onChange={onChangeHandler} />
-          </div>
           <div className={`edit-item-row-g ${hasMin === undefined && 'd-n'}`} id='hasMin' onClick={onCheckHandler}>
             <input
               type='checkbox'
@@ -206,6 +189,23 @@ const EditingItemPresenter = ({item: { id , name, idname , value , placeHolder ,
               value={ min }
               type='number'
               name='min'
+              className='edit-input'
+              onChange={onChangeHandler} />
+          </div>
+          <div className={`edit-item-row-g ${hasMax === undefined && 'd-n'}`} id='hasMax' onClick={onCheckHandler}>
+            <input
+              type='checkbox'
+              id='hasMax'
+              checked={ hasMax }
+              onChange={onCheckHandler} /> <span id='hasMax' className='cursor-d'>has maximum</span>
+          </div>
+          <div className={`edit-item-row-g ${max === undefined && 'd-n'} ${!hasMax && 'd-n'}`}>
+            <label className='edit-label'><code>maximum:</code></label>
+            <br />
+            <input
+              value={ max }
+              type='number'
+              name='max'
               className='edit-input'
               onChange={onChangeHandler} />
           </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 import './formCode.css';
 
-const FormCode = ({ info: { action, method, title, description, submitText }, form }) => {
+const FormCode = ({ info: { action, method, title, description, submitText, hasReset, resetText }, form }) => {
   const [copyBtnText, setCopyBtnText] = useState('')
   const codeContainer = useRef(null);
   const finalCode = useRef(null);
@@ -32,10 +32,19 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
     })
     /* form items be added here */
 
+    const formReset = document.createElement('input');
+    formReset.type = 'reset'
+    resetText.length === 0
+      ? formReset.value = 'Reset'
+      : formReset.value = resetText
+    if(hasReset) {
+      theForm.appendChild(formReset);
+    }
+    
     const formSubmit = document.createElement('input');
     formSubmit.type = 'submit'
     submitText.length === 0
-      ? formSubmit.value = 'submit'
+      ? formSubmit.value = 'Submit'
       : formSubmit.value = submitText
     theForm.appendChild(formSubmit);
 
@@ -49,7 +58,7 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
 
     setCopyBtnText('copy');
     // eslint-disable-next-line
-  }, [action, method, title, description, submitText, form]);
+  }, [action, method, title, description, submitText, hasReset, resetText, form]);
 
   const getItemCode = (item) => {
     const itemContainer = document.createElement('div');
@@ -102,22 +111,24 @@ const FormCode = ({ info: { action, method, title, description, submitText }, fo
     }
 
     if(item.isChecked) {
-      item.setSttribute('checked', '')
+      itemCode.setAttribute('checked', '')
     }
 
     if(item.hasMax) {
-      item.setSttribute('max', item.max)
+      itemCode.setAttribute('max', item.max)
     }
 
     if(item.hasMin) {
-      item.setSttribute('min', item.min)
+      itemCode.setAttribute('min', item.min)
     }
 
     if(item.hasStep) {
-      item.setSttribute('step', item.step)
+      itemCode.setAttribute('step', item.step)
     }
 
-    console.log('add max char')
+    if(item.hasMaxChar) {
+      itemCode.setAttribute('maxlength', item.maxChar)
+    }
 
     itemContainer.appendChild(itemCode);
 
